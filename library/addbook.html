@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+    <style>
+         a{
+            padding-right: 12px;
+            text-decoration: none;
+            color: black;
+            font-size: larger;
+            float: right;
+            margin-right: 5 0px;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body  bgcolor="#d98880">
+    <img src="download.jpeg" alt="" height="100px" width="100px" >
+    <a href="logout.html">Logout</a>
+    <a href="addbook.html">Add Book |</a>
+    <a href="contactus.html">Contact Us |</a>
+    <a href="viewbook.html">View Book|</a>
+    <a href="Home.html">Home |</a>
+  
+ 
+   
+    
+
+    <br><br>
+    <center>
+        
+    
+    <form action="" style="margin-top:50px ;background-color:#fdedec  ; border-radius: 5%; height: 400px; width :350px ;">
+        <h1>Add Book</h1>
+        <table bgcolor="#fdedec " cellspacing="8"> 
+            <tr>
+                <td>Book Name</td>
+                <td><input type="text" placeholder="enter the Book Name" required></td>
+            </tr>
+            <tr>
+                <td>Author Name</td>
+                <td><input type="text" placeholder="enter the author name" required></td>
+            </tr>
+            <tr>
+                <td>Book Type</td>
+                <td>
+                    <select name="Course " id="">
+                        <option value="course 1" selected>fiction</option>
+                        <option value="course 2">Short story</option>
+                        <option value="course 3">comics</option>
+                        <option value="course 4">Humor</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>description</td>
+                <td><textarea name="address" rows="7" cols="20" id="" placeholder="enter the description"required></textarea></td>
+            </tr>
+            <tr>
+                <td>price</td>
+                <td>
+                    <select name="price " id="">
+                        <option value="20000" selected>200</option>
+                        <option value="30000">300</option>
+                        <option value="20000">400</option>
+                        <option value="20000">500</option>
+                    </select>
+                </td>
+            </tr>
+                <tr ><td></td>
+                    <td ><input type="submit"  value="Add Book">
+                        <input type="reset"  value="cancel"></td>
+                </tr>
+        </table>
+    </form>
+
+</center>
+</body>
+</html>
