@@ -1,0 +1,100 @@
+
+body{
+    background-color: rgb(233, 200, 233);
+    margin: 0;
+    padding: 0;
+}
+.div2 a{
+    color: #4d1b61;
+    text-decoration: none;
+    font-size: 19px;
+    margin-right: 13px;
+    position: relative;
+    left: 750px;
+    background-color: rgb(255, 255, 255);
+    height: 170px;
+    width:700px;
+    font-family: Arial, Helvetica, sans-serif;
+     
+}
+body
+{
+    background-color: #e8daef;
+}
+.div2{
+    margin-top: 20px;
+}
+nav{
+    display: flex;
+    background-color:rgb(255, 255, 255);
+    box-shadow: 3px 3px 8px rgb(198, 203, 207);
+}
+img{
+    width: 60px;
+    height: 60px;
+}
+.main1,.p1
+{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main2,.p2
+{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.div3
+{
+    background-color: #d2b4de;
+    height: 130px;
+    padding-top: 20px;
+   
+}
+.main3
+
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main2{
+    color: #4d1b61;
+}
+.c1 ,.c2,.c3 {
+    border: 1px solid black;
+    background-color: #d2b4de;
+    width: 400px;
+    height: 350px;
+    margin-left: 50px;
+}
+.cs
+{
+    display: flex;
+}
+.cs img{
+    width: 70%;
+    height: 200px;
+    margin-left: 50px;
+}
+
+.c1a{
+    text-align: left;
+}
+.head{
+    text-align: center;
+}
+.cs .c1 .more{
+ margin-left:50px ;
+}
+.cs .c2 .more{
+    margin-left:50px ;
+   }
+   .cs .c3 .more{
+    margin-left:50px ;
+   }
+button
+{
+    margin-left: 130px;
+    background-color: #4d1b61;
+    border-radius: 20px;
+    height: 30px;
+    width: 120px;
+}
