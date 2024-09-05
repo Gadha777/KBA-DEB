@@ -1,0 +1,40 @@
+body{
+    background-color: #f5eef8;
+    }
+    a{
+    float:right; 
+    text-decoration: none;
+    font-size:large;
+    color: rgb(0, 0, 0);
+    padding:15px ;
+    }
+    h1
+    {
+    text-align: center;
+    }
+    img
+    {
+    height: 150px;
+    width:150px;
+    margin-left: 560px;
+    }
+    .first
+    {
+    border-color:hsl (197, 92, 63);
+    }
+    .second{
+    background-color: hsl(197, 92%, 63%);
+    color: rgb(255, 255, 255);
+    border-color: hwb(197 29% 3%);
+    }
+    .main
+    {
+    margin-left: 520px;
+    }
+    a:hover
+    {
+    background-color: hsl(197, 92%, 63%);
+    border-radius: 10px;
+    color: white;
+    }
+    
