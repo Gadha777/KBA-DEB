@@ -1,0 +1,210 @@
+body{
+    background-color: #CCFF99;
+    margin: 0;
+    padding: 0;
+}
+.div2 a{
+    color: #000033;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 20px;
+    position: relative;
+    left: 750px;
+    /* height: 170px;*/
+    width:300px;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+    padding: 10px;
+}
+.div2 a:hover{
+    background-color: #333300;
+    color: white;
+    border: 1px solid white;
+}
+.div2{
+    margin-top: 20px;
+    margin-left: -250px;
+    width: 1000px;
+}
+nav{
+    display: flex;
+  /*  box-shadow: 3px 3px 8px rgb(198, 203, 207);*/
+    background-color: #CCFF99;
+}
+.contact
+{
+    /* background-color: #333300;
+    color: white; */
+    font-weight: bold;
+    /* border: 1px solid white; */
+}
+img
+{
+    height: 30px;
+    width: 30px;
+}
+/* .first
+{
+    display: flex;
+} */
+.name
+{
+    color: #000033;
+    width: 100px;
+    margin-left: 10px;
+    font-size: 50px;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+}
+.email ,.github, .linkedin, .phone 
+{
+    margin: 90px;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+    
+}
+.linkedin img,h3
+{
+    margin-left: 20px;
+    
+}
+ .phone img,h3
+{
+    margin-left: 20px;
+}
+.email img,h3
+{
+    margin-left: 20px;
+}
+.github img,h3
+{
+    margin-left: 20px;
+}
+.c1{
+    height: 250px;
+    width: 500px;
+    margin-left: 90px;
+    display: flex;
+        /* border-top: 1px solid #000033; */
+        
+
+}
+.border
+{
+    border-bottom: 1px solid #000033;  
+}
+.heading
+{
+    margin-top: -20px;
+    text-align: center;
+    color: #000033;
+    font-size: 80px;
+    font-family: "Nerko One", cursive;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+.sub
+{
+    margin-top: -20px;
+    text-align: center;
+    color: #000033;
+    font-size: 40px;
+    font-family: "Nerko One", cursive;
+    font-weight: 100;
+    font-style: normal;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* div of message starting*/
+.msg{
+    width: 510px;
+    height: 570px;
+    border-radius: 15px;
+    background-color: #8bc34a; 
+    backdrop-filter: blur(50px); 
+    line-height: 40px;
+    margin-left: 400px;
+    }
+
+    h1{
+    color:#000033;
+    text-align: center;
+    padding-top: 7px;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+    }
+    label{
+    margin-left: 50px;
+    color: #000033;
+    font-size: 20px;
+    padding-bottom: 330px;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+    }
+    .insert{
+    margin-left: 50px;
+    height: 30px;
+    width: 400px;
+    /* border: 2px solid #000033; */
+    border-radius: 12px;
+    border-style: none;
+    }
+    .insert:hover{
+        background-color: #333300;
+        color: white;
+        border: 1px solid white;
+    /* border: 2px solid rgb(224, 236, 247); */
+    }
+    
+    textarea{
+    margin-left: 50px;
+    width: 400px;
+    /* border: 2px solid #000033; */
+    border-radius: 12px; 
+    border-style: none;
+    }
+    textarea:hover{
+        background-color: #333300;
+        color: white;
+        border: 1px solid white;
+    }
+    ::placeholder{
+    font-size:15px ;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    .button1{
+    margin-left: 50px;
+    height: 35px;
+    width: 410px;
+    /* border: 2px solid #000033; */
+    border-radius: 12px;
+    color: rgb(12, 12, 75);
+    border-style: none;
+    }
+    .button1:hover{
+    /* background-color: rgb(28, 124, 212); */
+    /* color: #000033; */
+    height: 40px;
+    /* border-color: rgb(28, 124, 212); */
+    background-color: #333300;
+    color: white;
+    border: 1px solid white;
+    }
+    /* div of message ending*/
+    
+    

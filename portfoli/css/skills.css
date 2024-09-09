@@ -1,0 +1,261 @@
+body{
+    background-color: #CCFF99;
+    margin: 0;
+    padding: 0;
+}
+.div2 a{
+    color: #000033;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 20px;
+    position: relative;
+    left: 750px;
+    /* height: 170px;*/
+    width:300px;
+    /* font-family:Helvetica ; */
+    padding: 10px;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+}
+.div2 a:hover{
+    background-color: #333300;
+    color: white;
+    border: 1px solid white;
+    border-radius: 25px;
+}
+ .div1 h1
+{
+    color: #000033;
+    width: 100px;
+    margin-left: 10px;
+    font-size: 50px;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+}
+.div2{
+    margin-top: 20px;
+    margin-left: -250px;
+    width: 1000px;
+}
+nav{
+    display: flex;
+  /*  box-shadow: 3px 3px 8px rgb(198, 203, 207);*/
+    background-color: #CCFF99;
+}
+.skills
+{
+    /* background-color: #333300;
+    color: white; */
+    font-weight: bold;
+    /* border: 1px solid white; */
+}
+.set
+{
+    
+    /* font-size: 10px; */
+    height: 150px;
+    width:1160px;
+    padding-top: 20px;
+    background-color: rgba(255, 255, 255, 0.973); 
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+    text-align : center;
+    margin: 30px;
+    /* margin-top: 30px; */
+    
+}
+.set
+{
+display: flex;
+}
+.main
+{   border-radius: 22px;
+    background-color: #8bc34a;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+/* .ani
+{
+    height: 10px;
+    width: 10px;
+    background-color: white;
+    margin-top: 70px;
+    margin-left: 110px;
+    transition: width 2s, height 2s  ;
+} */
+.set .s1{
+    /* margin-top: 10px; */
+    margin-left: 50px;
+    height: 60px;
+    width:100px;
+    border-radius: 50px;
+    background-color: #660033;
+    font-size: 20px;
+    padding-top:40px;
+    color: white;
+}
+.per
+{
+    margin-top: 8px;
+    font-weight: bold;
+    color:white;
+}
+/* Html animation */
+.ani {
+    
+    margin-top: 60px;
+    width: 20px;
+    height:30px;
+    background-color: #006600;
+    animation: move 5s 1 forwards; /* Run once and keep the final state */
+}
+
+@keyframes move {
+    0% { 
+        
+        transform: translateX(0); 
+    }
+  
+    
+    100% {
+        width: 900px;
+        transform: translateX(100px);
+     } /* Stop at 100px */
+}
+
+/* css */
+.ani2 {
+    
+    margin-top: 60px;
+    width: 20px;
+    height:30px;
+    background-color: #CCFF99;
+    animation: side 5s 1 forwards; /* Run once and keep the final state */
+}
+
+@keyframes side{
+    0% { 
+        
+        transform: translateX(0); 
+    }
+  
+    
+    100% {
+        width: 900px;
+        transform: translateX(100px);
+     } /* Stop at 100px */
+}
+/* js */
+.ani3 {
+    
+    margin-top: 60px;
+    width: 20px;
+    height:30px;
+    background-color: #CCFF99;
+    animation: slide 5s 1 forwards; /* Run once and keep the final state */
+}
+
+@keyframes slide{
+    0% { 
+        
+        transform: translateX(0); 
+    }
+  
+    
+    100% {
+        width: 450px;
+        transform: translateX(100px);
+     } /* Stop at 100px */
+}
+/* Mysql */
+.ani4 {
+    
+    margin-top: 60px;
+    width: 20px;
+    height:30px;
+    background-color: #CCFF99;
+    animation: Mysql 5s 1 forwards; /* Run once and keep the final state */
+}
+
+@keyframes Mysql{
+    0% { 
+        
+        transform: translateX(0); 
+    }
+  
+    
+    100% {
+        width: 800px;
+        transform: translateX(100px);
+     } /* Stop at 100px */
+}
+/* Asp.net */
+.ani5{
+    
+    margin-top: 60px;
+    width: 20px;
+    height:30px;
+    background-color: #CCFF99;
+    animation: Asp 5s 1 forwards; /* Run once and keep the final state */
+}
+
+@keyframes Asp{
+    0% { 
+        
+        transform: translateX(0); 
+    }
+  
+    
+    100% {
+        width: 700px;
+        transform: translateX(100px);
+     } /* Stop at 100px */
+}
+/* C++ */
+.ani6{
+    
+    margin-top: 60px;
+    width: 20px;
+    height:30px;
+    background-color: #CCFF99;
+    animation: C 5s 1 forwards; /* Run once and keep the final state */
+}
+
+@keyframes C{
+    0% { 
+        
+        transform: translateX(0); 
+    }
+  
+    
+    100% {
+        width: 800px;
+        transform: translateX(100px);
+     } /* Stop at 100px */
+}
+/* */
+.ani7{
+    
+    margin-top: 60px;
+    width: 20px;
+    height:30px;
+    background-color: #CCFF99;
+    animation: Csharp 5s 1 forwards; /* Run once and keep the final state */
+}
+
+@keyframes  Csharp{
+    0% { 
+        
+        transform: translateX(0); 
+    }
+  
+    
+    100% {
+        width: 450px;
+        transform: translateX(100px);
+     } /* Stop at 100px */
+}

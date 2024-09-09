@@ -1,0 +1,87 @@
+.div2 a{
+    color: #4d1b61;
+    text-decoration: none;
+    font-size: 19px;
+    margin-right: 15px;
+    position: relative;
+    left: 750px;
+    background-color: rgb(238, 228, 238);
+    height: 170px;
+    width:700px;
+    font-family: Arial, Helvetica, sans-serif;
+     
+}
+.div2{
+    margin-top: 20px;
+}
+nav{
+    display: flex;
+    background-color:rgb(238, 228, 238);
+    
+}
+img{
+    width: 60px;
+    height: 60px;
+}
+body{
+    background-color: rgb(255, 238, 255);
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 450px;
+    height: 450px;
+    background-color:rgb(238, 228, 238);
+    border-radius: 10px;
+    align-items: center;
+    margin-left: 400px;
+    margin-top: 10px;
+    font-size: 17px;
+    padding: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    color: #911eca ;
+    text-align: center;
+}
+label{
+ 
+    font-family: Arial, Helvetica, sans-serif;
+}
+.enter{
+    margin: 30px; 
+}
+select{
+    width: 400px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 25px;
+    border-radius: 5px;
+
+    border:2px solid rgb(224, 224, 224);
+
+}
+.enter2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 25px;
+    width: 400px;
+    border-radius: 5px;
+    border-color: rgb(224, 224, 224);
+}
+textarea{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 400px;
+    border-radius: 5px;
+    border-color: rgb(224, 224, 224);
+}
+.button1{
+    border: 1px solid white;
+     background-color: #875c9c ;
+     color: white;
+     height:30px ;
+     width: 400px;
+     border-radius: 14px;
+    }

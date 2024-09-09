@@ -1,0 +1,117 @@
+.div2 a{
+    color: #4d1b61;
+    text-decoration: none;
+    font-size: 19px;
+    margin-right: 15px;
+    position: relative;
+    left: 750px;
+    background-color: rgb(238, 228, 238);
+    height: 170px;
+    width:700px;
+    font-family: Arial, Helvetica, sans-serif;
+     
+}
+.div2{
+    margin-top: 20px;
+}
+nav{
+    display: flex;
+    background-color:rgb(238, 228, 238);
+    
+}
+img{
+    width: 60px;
+    height: 60px;
+}
+body{
+    background-color: rgb(255, 238, 255);
+    margin: 0;
+    padding: 0;
+}
+.container
+{
+    height: 600px;
+    width: 600px;
+    background-color: rgb(238, 228, 238);
+    margin-left: 350px;
+    border-radius: 12px;
+}
+.container img{
+    height: 150px;
+    width: 250px; 
+    margin: 20px;
+    margin-left: 130px;
+}
+.des
+{
+    margin-left: 20px;
+}
+.line
+{
+display: flex;
+margin-left: 17px;
+}
+.fristsub{
+    display: flex;
+    margin-left: 300px;
+}
+.button1{
+    margin-left: 10px;
+    margin-top: 15px;
+    background-color: #972ec0;
+    color: white;
+    border: 2px solid white;
+    height: 30px;
+    border-radius: 6px;
+    width: 140px;
+}
+.subhead{
+    color: #972ec0;
+    font-size: 20px;
+    
+}
+.back{
+    margin-left: 350px;
+    text-decoration: none;
+    color: black;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.sec{
+    color: rgb(240, 29, 29);
+}
+.first{
+    color: #972ec0;
+    font-size: 20px;
+
+}
+.uls{
+    margin-left: -30px;
+    color: rgb(46, 44, 42);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+}
+.butset{
+    float: inline-end;
+    margin-right:60px ;
+
+}
+.butre{
+    width: 120px;
+    height: 34px;
+    color: white;
+    background-color: rgb(255, 35, 35);
+    border-radius: 19px;
+    font-size: 14px;
+    border: 1px solid rgb(255, 35, 35);
+    margin-left: 20px;
+}
+.buted{
+    width: 120px;
+    height: 34px;
+    color: white;
+    background-color: rgb(42, 116, 252);
+    border-radius: 19px;
+    font-size: 14px;
+    border: 1px solid rgb(42, 116, 252);
+}
