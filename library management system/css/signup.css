@@ -1,0 +1,45 @@
+body{
+    background-image: url(/images/images.jpg);
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    color: darkred;
+    text-align: center;
+}
+.container{
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    border-radius: 15px;
+    align-items: center;
+    margin-left: 450px;
+    margin-top: 40px;
+    font-size: 20px;
+    padding: 20px;
+}
+.button1{
+
+     background-color:darkred;
+     color: rgb(255, 255, 255);
+     height:35px ;
+     width: 310px;   
+     /* border: 1px solid white; */
+     border-radius: 15px;
+    }
+    .enter2{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 25px;
+        border-radius: 5px;
+        border-color: rgb(250, 250, 250);
+    }
+    .enter{
+        margin: 35px; 
+    }
+    select{
+        width: 305px;
+        height: 35px;
+    }

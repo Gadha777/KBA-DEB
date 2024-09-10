@@ -1,0 +1,44 @@
+body
+{
+    background-image: url(/images/images.jpg);
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    color: darkred;
+    text-align: center;
+}
+.container{
+    margin-left: 420px;
+    margin-top: 50px;
+    width: 350px;
+    height: 400px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 25px;
+    font-size: 20px;
+}
+.enter{
+    margin: 30px;
+}
+.enter2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 25px;
+    border-radius: 5px;
+    border-color: black;
+}
+.button1{
+    margin-left: 100px;
+    background-color:darkred;
+ color: black;
+ height:35px ;
+ width: 100px; 
+}
+a{
+    color: darkred;
+    font-size: 20px;
+}
+

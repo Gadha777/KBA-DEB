@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addcourse</title>
+    <!-- <link rel="stylesheet" href="stylecss/add.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class=" flex bg-purple-200">
+    <img src="billa.png" alt="" class="w-16 ml-0 flex justify-start">
+        <nav class="w-full  h-18 text-pink-900 bg-purple-200  flex justify-end	mr-8 mt-4" >
+                <a  class="mr-8" href="homepage.html">Home</a>
+                <a  class="mr-8"  href="addcourse.html">Course</a>
+                <a  class="mr-8"  href="contact.html">Contact Us</a>
+                <a  class="mr-8"  href="">Add Course</a>
+                <a  class="mr-8 "  href="">Logout</a>
+            </div>
+        </nav>
+        
+    <div class="bg-purple-200 mt-2 w-4/12 rounded p-8 mx-auto">
+        <h1 class="text-2xl font-bold text-pink-900 text-center">Add Course</h1>
+        <div>
+          <div class="mt-6 ml-4 ">
+            <label for="">Course Name :</label>
+            <br>
+            <input  class="w-80" type="text" placeholder="">
+          </div>
+    
+            <div class="mt-6 ml-4">
+            <label for="">Course Id :</label>
+            <br>
+            <input  class="w-80" type="text" placeholder="eg:1" >
+            </div>
+            
+            <div class="mt-6 ml-4">
+                <label for="">Course Type :</label>
+            <br>
+            <select   class="w-80"name="" id="">
+                <option value="course1">course 1</option>
+                <option value="course2">course 2</option>
+                <option value="course3">course 3</option>
+            </select>
+            </div>
+            <div class="mt-6 ml-4">
+                <label for="">Descirption :</label>
+            <br>
+            <textarea name=""  class="w-80" id=""  placeholder="Small description on the course"></textarea>
+            </div>
+
+            <div class="mt-6 ml-4">
+                <label for="">price</label>
+            <br>
+            <select name=""   class="w-80"id="">
+                <option value="20000">20000</option>
+                <option value="30000">30000</option>
+                <option value="10000">10000</option>
+                <option value="40000">40000</option>
+            </select>
+            </div>
+           <div class="mt-6 ml-4">
+            <input  class="w-80 rounded-lg text-white bg-fuchsia-800" type="submit"  value="Add Course">
+           </div>
+        </div>
+
+    </div>
+</body>
+</html>
