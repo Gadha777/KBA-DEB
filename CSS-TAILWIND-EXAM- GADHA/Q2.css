@@ -1,0 +1,7 @@
+
+input{
+  background-color: blue;
+}
+input:hover{
+    background-color: red;
+}
