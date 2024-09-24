@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Program to swap two numbers using a temporary variable
+        document.write("<br><br> 1.Program to swap two numbers using a temporary variable<br> <br>")
+    let N1=2
+    let N2=4
+        document.write("before swap N1 ="+N1 ,"\tand N2 ="+N2)
+    temp = N1;
+    N1 = N2;
+    N2 = temp;
+    document.write("<br>after swap N1 ="+N1 ,"\tand N2 ="+N2)
+// Program to swap two numbers w/o using temporary variable
+document.write("<br><br> 2.Program to swap two numbers w/o using temporary variable<br> <br>")
+let a1=2
+    let a2=4
+        document.write("before swap a1 ="+a1 ,"\tand a2 ="+a2)
+        a1=a1+a2
+        a2=a1-a2
+        a1=a1-a2
+    document.write("<br>after swap a1 ="+a1 ,"\tand a2 ="+a2)
+// Program to convert Celsius to fahrenheit
+document.write("<br><br> 3.Program to convert Celsius to fahrenheit<br> <br>")
+
+function celsiusToFahrenheit(celsius)
+ {
+    return (celsius * 9/5) + 32;
+}
+
+// Example usage:
+celsius = 20
+fahrenheit = celsiusToFahrenheit(celsius);
+document.write("the converted value ="+fahrenheit);
+        // Program to find square of a number
+          document.write("<br><br> 4.Program to find square of a number<br> <br>")
+         let no=5
+         let sq=no*no
+         document.write("square of the number is  "+sq,"<br>")
+
+
+        // Program to find cube of a number
+        document.write("<br><br> 5.Program to find cube of a number<br> <br>")
+        let i= 5
+        let cube= i*i*i
+        document.write("cube of the number is " +cube,"<br>" )
+
+
+        // Program to find area of square, circle, rectangle, triangle
+document.write("<br><br> 6.Program to find area of square, circle, rectangle, triangle<br> <br>")
+        let len=9
+        let wid=7
+        let radi=4
+        let height=8
+        let base=4
+        function rectangle(lenght,width)
+        {
+            return (len+wid)*2
+        }
+        function square(len)
+        {
+            return (len*len)
+        }
+        function circle(radi)
+        {
+            return (2*3.14*radius)
+        }
+        function triangle(base, height)
+        {
+            return (1/2*(base*height))
+        }
+        let rectangleA=rectangle(len,wid);
+        document.write("Area  of a rectangle is ", rectangleA,"<br> <br>")
+        let squareA=square(len);
+        document.write("Area  of square is ",squareA,"<br> <br>")
+        let circleA=circle(radi);
+        document.write("Area  of circle is ", circleA,"<br> <br>")
+        let triangleA=triangle(1/2*(base*height));
+        document.write("Area of triangle is ", triangleA,"<br> <br>")
+
+// Program to find perimeter of rectangle, square, circle, triangle
+document.write("<br><br> 7.Program to find perimeter of rectangle, square, circle, triangle<br> <br>")
+        let lenght=9
+        let width=7
+        let radius=4
+        let t1=8
+        let t2=4
+        function rectangle(lenght,width)
+        {
+            return (lenght+width)*2
+        }
+        function square(lenght)
+        {
+            return (lenght*lenght)
+        }
+        function circle(radius)
+        {
+            return (2*3.14*radius)
+        }
+        function triangle(lenght, t1,t2)
+        {
+            return (lenght+t1+t2)
+        }
+        let rectangleP=rectangle(lenght,width);
+        document.write("perimeter of a rectangle is ", rectangleP,"<br> <br>")
+        let squareP=square(lenght);
+        document.write("Perimeter of square is ",squareP,"<br> <br>")
+        let circleP=circle(radius);
+        document.write("Perimeter of circle is ", circleP,"<br> <br>")
+        let triangleP=triangle(lenght, t1,t2);
+        document.write("Perimeter of triangle is ", triangleP,"<br> <br>")
+
+// Program to find simple interest & compound interest
+
+        document.write("<br><br> 8.Program to find simple interest & compound interest<br> <br>")
+        let principal = 5
+        let rate = 10
+        let time = 9
+
+        function simple(principal,rate,time)
+        {
+            return (principal * rate * time) / 100;
+        }
+        function compound(principal ,rate, time)
+        {
+            return  principal * Math.pow((1 + rate / 100), time) - principal;
+        }
+        let SimpleInterest=simple(principal,rate,time);
+        document.write("simple interest is ", SimpleInterest,"<br> <br>")
+
+        let CompoundInterest=compound(principal,rate,time);
+        document.write("Compound  interest is ", CompoundInterest,"<br>")
+ 
+// Program to find largest among two numbers
+document.write("<br><br> 9.Program to find largest among two numbers<br> <br>")
+   
+    let a=10
+    let b=11
+    if(a>b)
+    {
+        documnet.write("largest number is "+a,"<br>")
+    }
+    else
+    {
+        document.write("latrgest number is "+b,"<br>")
+    }
+
+
+// program to find smallest among three numbers
+document.write("<br><br> 10.program to find smallest among three numbers<br> <br>")
+    let f=7
+    let s=4
+    let t=1
+
+    if(f>=s && f>=t)
+    {
+        document.write("largest no is "+ f ,"<br>")
+    }
+    else if (s>t)
+    {
+        document.write("largest no is "+ s ,"<br>")
+    }
+    else
+    {
+        document.write("largest no is "+t ,"<br> <br> <br>")
+    }
+    // Program to check the given number is zero,positive and negative
+    document.write("<br><br> 11.Program to check the given number is zero,positive and negative <br> <br>")
+        let n=1
+
+        if(n==0)
+        {
+        document.write("this number is zero <br>")
+    }
+    else if(n>0)
+    {
+        document.write("this number is a positive number <br> ")
+    }
+    else
+    {
+        document.write("this number is a negative number <br>")
+    }
+    </script>
+</body>
+</html>
