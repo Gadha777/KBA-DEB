@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n=153;
+        let d,t,n1,c=0,s=0;
+        t=n1=n;
+        while(n>0)
+    {
+        c++;
+        n=Math.floor(n/10);
+    }
+    while(n1>0)
+    {
+        d=n1%10;
+        s=s+Math.pow(d,c);
+        n1=Math.floor(n1/10);
+    }
+   
+    if(t==s)
+    {
+        document.write(t," is armstrong")
+    }
+    else
+    {
+        document.write(t," is not armstrong")
+    }
+    </script>
+</body>
+</html>

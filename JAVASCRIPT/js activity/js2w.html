@@ -7,11 +7,10 @@
 </head>
 <body>
     <script>
-        // Program to swap two numbers using a temporary variable
-        document.write("<br><br> 1.Program to swap two numbers using a temporary variable<br> <br>")
+    document.write("<br><br> 1.Program to swap two numbers using a temporary variable<br> <br>")
     let N1=2
     let N2=4
-        document.write("before swap N1 ="+N1 ,"\tand N2 ="+N2)
+    document.write("before swap N1 ="+N1 ,"\tand N2 ="+N2)
     temp = N1;
     N1 = N2;
     N2 = temp;
@@ -26,18 +25,12 @@ let a1=2
         a1=a1-a2
     document.write("<br>after swap a1 ="+a1 ,"\tand a2 ="+a2)
 // Program to convert Celsius to fahrenheit
-document.write("<br><br> 3.Program to convert Celsius to fahrenheit<br> <br>")
+    document.write("<br><br> 3.Program to convert Celsius to fahrenheit<br> <br>")
+    celsius = 20
+    document.write("the converted value ="+(celsius * 9/5) + 32);
 
-function celsiusToFahrenheit(celsius)
- {
-    return (celsius * 9/5) + 32;
-}
 
-// Example usage:
-celsius = 20
-fahrenheit = celsiusToFahrenheit(celsius);
-document.write("the converted value ="+fahrenheit);
-        // Program to find square of a number
+// Program to find square of a number
           document.write("<br><br> 4.Program to find square of a number<br> <br>")
          let no=5
          let sq=no*no
@@ -57,31 +50,11 @@ document.write("<br><br> 6.Program to find area of square, circle, rectangle, tr
         let wid=7
         let radi=4
         let height=8
-        let base=4
-        function rectangle(lenght,width)
-        {
-            return (len+wid)*2
-        }
-        function square(len)
-        {
-            return (len*len)
-        }
-        function circle(radi)
-        {
-            return (2*3.14*radius)
-        }
-        function triangle(base, height)
-        {
-            return (1/2*(base*height))
-        }
-        let rectangleA=rectangle(len,wid);
-        document.write("Area  of a rectangle is ", rectangleA,"<br> <br>")
-        let squareA=square(len);
-        document.write("Area  of square is ",squareA,"<br> <br>")
-        let circleA=circle(radi);
-        document.write("Area  of circle is ", circleA,"<br> <br>")
-        let triangleA=triangle(1/2*(base*height));
-        document.write("Area of triangle is ", triangleA,"<br> <br>")
+        let base=4        
+        document.write("Area  of a rectangle is ", (len+wid)*2,"<br> <br>")
+        document.write("Area  of square is ",(len*len),"<br> <br>")
+        document.write("Area  of circle is ", (2*3.14*radi),"<br> <br>")
+        document.write("Area of triangle is ", (1/2*(base*height)),"<br> <br>")
 
 // Program to find perimeter of rectangle, square, circle, triangle
 document.write("<br><br> 7.Program to find perimeter of rectangle, square, circle, triangle<br> <br>")
@@ -90,51 +63,26 @@ document.write("<br><br> 7.Program to find perimeter of rectangle, square, circl
         let radius=4
         let t1=8
         let t2=4
-        function rectangle(lenght,width)
-        {
-            return (lenght+width)*2
-        }
-        function square(lenght)
-        {
-            return (lenght*lenght)
-        }
-        function circle(radius)
-        {
-            return (2*3.14*radius)
-        }
+    
+        
         function triangle(lenght, t1,t2)
         {
             return (lenght+t1+t2)
         }
-        let rectangleP=rectangle(lenght,width);
-        document.write("perimeter of a rectangle is ", rectangleP,"<br> <br>")
-        let squareP=square(lenght);
-        document.write("Perimeter of square is ",squareP,"<br> <br>")
-        let circleP=circle(radius);
-        document.write("Perimeter of circle is ", circleP,"<br> <br>")
-        let triangleP=triangle(lenght, t1,t2);
-        document.write("Perimeter of triangle is ", triangleP,"<br> <br>")
+        
+        document.write("perimeter of a rectangle is ", (lenght+width)*2,"<br> <br>")
+        document.write("Perimeter of square is ",(lenght*lenght),"<br> <br>")
+        document.write("Perimeter of circle is ", (2*3.14*radius),"<br> <br>")
+        document.write("Perimeter of triangle is ", (lenght+t1+t2),"<br> <br>")
 
 // Program to find simple interest & compound interest
 
         document.write("<br><br> 8.Program to find simple interest & compound interest<br> <br>")
         let principal = 5
         let rate = 10
-        let time = 9
-
-        function simple(principal,rate,time)
-        {
-            return (principal * rate * time) / 100;
-        }
-        function compound(principal ,rate, time)
-        {
-            return  principal * Math.pow((1 + rate / 100), time) - principal;
-        }
-        let SimpleInterest=simple(principal,rate,time);
-        document.write("simple interest is ", SimpleInterest,"<br> <br>")
-
-        let CompoundInterest=compound(principal,rate,time);
-        document.write("Compound  interest is ", CompoundInterest,"<br>")
+        let time = 9      
+        document.write("simple interest is ", (principal * rate * time) / 100,"<br> <br>")
+        document.write("Compound  interest is ", principal * Math.pow((1 + rate / 100), time) - principal,"<br>")
  
 // Program to find largest among two numbers
 document.write("<br><br> 9.Program to find largest among two numbers<br> <br>")

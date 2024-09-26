@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <div> 
+        <h1>List of Cinemas</h1>
+        <ul id="cinemas"></ul>
+    </div>
+    <h1>Select One</h1>
+    <select id="pl"></select>
+  <div>
+    <select name="" id="book"></select>
+  </div>
+  <div>
+    <select name="" id="cakes"></select>
+  </div>
+  <div id="radio">
+
+  </div>
+    <script>
+//Program to print a para about yourself using createElement() , textContent & append child. 
+        let element=document.createElement("p");
+        let element1=document.createElement("p");
+        element1.innerHTML="Q1. Program to print a para about yourself using createElement() , textContent & append child.<br>";
+        element.textContent="Myself gadha pushpan and i'm from ernkalum currently pursing blockchain in kerala blockchain academy in tvm.";
+        document.getElementById("mydiv").appendChild(element1);
+        document.getElementById("mydiv").appendChild(element); 
+//Make an unordered list of cinemas on html page using javascript.
+        let question=document.createElement("p");
+        question.innerHTML="Q2. Make an unordered list of cinemas on html page using javascript.<br><br>";
+        document.getElementById("cinemas").appendChild(question);
+
+        let cinemas= document.getElementById("cinemas");
+            cinema1=document.createElement("li");
+            cinema1.textContent="PVR";
+            document.getElementById("cinemas").appendChild(cinema1);
+
+        let cinema2=document.createElement("li");
+            cinema2.textContent="INOX";
+            document.getElementById("cinemas").appendChild(cinema2);
+
+        let cinema3=document.createElement("li");
+            cinema3.textContent="ARIES PLEX";
+            document.getElementById("cinemas").appendChild(cinema3);
+
+        let cinema4=document.createElement("li");
+            cinema4.textContent="CINEPOLIS";
+            document.getElementById("cinemas").appendChild(cinema4);
+
+//Create a dropdown for programming language classes offered on html page using javascript.
+        document.write("Q3. Create a dropdown for programming language classes offered on html page using javascript.<br><br>")
+        let dropdown= document.getElementById("pl");
+
+            let option1=document.createElement("option");
+                option1.value="1";
+                option1.textContent="C++";
+                dropdown.appendChild(option1);
+
+            let option2=document.createElement("option");
+                option2.value="2";
+                option2.textContent="JAVA";
+                dropdown.appendChild(option2);
+
+            let option3=document.createElement("option");
+                option3.value="3";
+                option3.textContent="python";
+                dropdown.appendChild(option3);
+                document.write("<br>")
+     
+//Create a dropdown containing name of books on the book shop page after List of Book heading.
+        document.write("Q4. Create a dropdown containing name of books on the book shop page after List of Book heading. <br><br>")
+        let dropdownbook= document.getElementById("book");
+
+        let optionone=document.createElement("option");
+        optionone.value="1";
+        optionone.textContent="Atomic Habit";
+        dropdownbook.appendChild(optionone);
+
+        let optiontwo=document.createElement("option");
+        optiontwo.value="2";
+        optiontwo.textContent="november 9";
+        dropdownbook.appendChild(optiontwo);
+
+        let optionthree=document.createElement("option");
+        optionthree.value="3";
+        optionthree.textContent="orikkal";
+        dropdownbook.appendChild(optionthree);
+
+//On the KBA site you created add a radio button showing your experience on KBA(like good, bad, average).
+        document.write("Q5. On the KBA site you created add a radio button showing your experience on KBA(like good, bad, average).<br><br>")
+        let kbaradio= document.getElementById("radio");
+        let radio1=document.createElement("input");
+        radio1.type="radio";
+        radio1.name="feedback";
+        kbaradio.appendChild(radio1);
+        kbaradio.appendChild(document.createTextNode("Good "));
+
+        let radio2=document.createElement("input");
+        radio2.type="radio";
+        radio2.name="feedback";
+        kbaradio.appendChild(radio2);
+        kbaradio.appendChild(document.createTextNode("bad "));
+
+        let radio3=document.createElement("input");
+        radio3.type="radio";
+        radio3.name="feedback";
+        kbaradio.appendChild(radio3);
+        kbaradio.appendChild(document.createTextNode("average "));
+//Create a dropdown for list of cakes and print the value of second option.
+        document.write("Q6. Create a dropdown for list of cakes and print the value of second option.<br><br>")
+        let dropdowncake= document.getElementById("cakes");
+
+let optionc1=document.createElement("option");
+optionc1.value="1";
+optionc1.textContent="cream cake";
+dropdowncake.appendChild(optionc1);
+
+let optionc2=document.createElement("option");
+optionc2.value="2";
+optionc2.textContent="black forest";
+dropdowncake.appendChild(optionc2);
+
+let optionc3=document.createElement("option");
+optionc3.value="3";
+optionc3.textContent="red velvet";
+dropdowncake.appendChild(optionc3);
+//Print your full name storing fname & lname. Print in Uppercase.
+        document.write("Q7. Print your full name storing fname & lname. Print in Uppercase.<br><br>")
+        let name="gadha Pushpan"
+        document.write(name.toUpperCase(),"<br><br>")
+
+
+//“You can study anything if you have a will to do it”.Take the substrings “You can study”, “you”,”will”,”do it” and combine as a sentence.
+        document.write("Q8. “You can study anything if you have a will to do it”.Take the substrings “You can study”, “you”,”will”,”do it” and combine as a sentence.<br><br>")
+        let sentence4="You can study anything if you have a will to do it, "
+        // using slice function
+        sentence4=sentence4.slice(0,13)+sentence4.slice(25,29)+sentence4.slice(36,41)+sentence4.slice(44,50);
+        document.write( "the substring is ",sentence4, "<br><br>")
+
+
+//“MongoDB is a decentralised distributed ledger . MongoDB can eliminate centralisation.” Replace MongoDB with Blockchain.
+        document.write("Q9. “MongoDB is a decentralised distributed ledger . MongoDB can eliminate centralisation.” Replace MongoDB with Blockchain.<br><br>")
+        let sentence3="MongoDB is a decentralised distributed ledger. MongoDB can eliminate centralisation."
+        sentence3=sentence3.replace(/MongoDB/g,"Blockchain")
+        document.write(sentence3,"<br><br>")
+
+
+//Consider this statement “ My name is ________.(declaring fname & lastname in uppercase). I live in ____(uppercase).
+        document.write("Q13. Consider this statement “ My name is ________.(declaring fname & lastname in uppercase). I live in ____(uppercase).<br><br>")
+        let string1="My name is Gadha pushpan.";
+        let string2="I live in Ernakulam."
+        //using slice function
+        string1 = string1.slice(0, 11) + "GADHA PUSHPAN" + string1.slice(24);
+        document.write(string1, "<br><br>");
+        string2 = string2.slice(0, 10) + "ERNAKULAM" + string2.slice(19);
+        document.write(string2, "<br><br>");
+
+
+// Print the string “MongoDB is a decentralised distributed ledger” using substring/substr.
+        document.write("Q11. Print the string “MongoDB is a decentralised distributed ledger” using substring/substr.<br><br>")
+        let str = "MongoDB is a decentralised distributed ledger";
+        let part1 = str.substr(0, 7);   // "MongoDB"
+        let part2 = str.substr(7, 3);   // " is"
+        let part3 = str.substr(10, 2);  // " a"
+        let part4 = str.substr(12, 13); // " decentralised"
+        let part5 = str.substr(25, 12); // " distributed"
+        let part6 = str.substr(37);     // " ledger"
+        document.write(part1 + part2 + part3 + part4 + part5 + part6,"<br><br>");
+
+
+//Compare “Hello World” & “hEllO World” and display the result & its type.
+        document.write("Q12. Compare “Hello World” & “hEllO World” and display the result & its type.<br><br>")
+        let str1 = "Hello World";
+        let str2 = "hEllO World";
+        let comparisonResult = (str1 === str2);
+        document.write("Comparison Result:", comparisonResult);
+        document.write("Type of Result:", typeof comparisonResult,"<br>");
+
+
+//Print this statement “ I am ___ yrs of old and my brother is 10 yrs older to me. He is now __ years old.”
+        document.write("Q13.Print this statement “ I am ___ yrs of old and my brother is 10 yrs older to me. He is now __ years old.<br><br>")
+        let myAge = 25;
+        let brotherAge = myAge + 10;
+        document.write(`I am ${myAge} yrs of old and my brother is 10 yrs older to me. He is now ${brotherAge} years old.<br> `);
+
+
+//Consider these two statements “I like to play video games.” “I don’t like Hide & seek”. Change 'like' to 'don't like'.
+        document.write(" Q14. Consider these two statements “I like to play video games.” “I don’t like Hide & seek”. Change 'like' to 'don't like'.<br><br>")
+        let sentence1 = "I like to play video games.";
+        let sentence2 = "I don’t like Hide & seek.";
+        document.write("sentence1 = \t"+sentence1,"<br><br>")
+        document.write("sentence2 = \t"+sentence2,"<br><br>")
+        //replace function
+        sentence1 = sentence1.replace("like", "don't like");
+        sentence2 = sentence2.replace("like", "don't like");
+        document.write("corrected sentence1 is "+sentence1,"<br><br>")
+        document.write("corrected sentence2 is "+sentence2,"<br><br>")
+// Write a JavaScript program to compute the sum of the two given integers. If the sum is in the range 50..80 return 65 otherwise return 80 (using ternary operator).
+       document.write("Q15. Write a JavaScript program to compute the sum of the two given integers. If the sum is in the range 50..80 return 65 otherwise return 80 (using ternary operator).<br><br>")
+        let a = 50; 
+        let b = 40; 
+        let sum = a + b;
+        let result = (sum >= 50 && sum <= 80) ? 65 : 80;
+        document.write(result,"<br><br>");
+
+//Program to find whether the person is eligible for voting using ternary operator        
+        document.write("Q16. Program to find whether the person is eligible for voting using ternary operator<br><br>")
+        let age = 12;
+        let eligibility = (age >= 18) ? "Eligible for voting" : "Not eligible for voting";
+        document.write(eligibility); 
+
+    </script>
+</body>
+</html>

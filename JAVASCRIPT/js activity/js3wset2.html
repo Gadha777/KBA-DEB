@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//Write a JavaScript program to check whether a given positive number is a multiple of 3 or 7.
+document.write("Q1. Write a JavaScript program to check whether a given positive number is a multiple of 3 or 7.<br><br>")
+let n=12;
+if(n%3==0 && n%7==0)
+document.write("<br>",n," is a multiple of 3 and 7<br><br>")
+else
+document.write(n," is a multiple of 3 and 7<br><br>")
+// Write a JavaScript conditional statement to find the sign of the product of three numbers. Display with the specified sign.
+document.write("Q2. Write a JavaScript conditional statement to find the sign of the product of three numbers. Display with the specified sign.<br>")
+// Write a program using switch case to check the CGPA on given condition.
+// If the CGPA is 8 then print You got 8 CGPA.
+// If the CGPA is 10 then print You got 10 CGPA.
+// If the CGPA is 7 then print You got 7 CGPA.
+document.write("Q3.Write a program using switch case to check the CGPA on given condition.<br><br>")
+let o=10
+switch(o)
+{
+    case 10:
+        {
+            document.write(" You got 10 CGPA.<br>")
+            break;
+        }
+        case 8:
+        {
+            document.write(" You got 8 CGPA.<br>")
+            break;
+        }
+        case 7:
+        {
+            document.write(" You got 7 CGPA.<br>")
+            break;
+        }
+        default:{
+                document.write("enter a valid number<br>")
+            }
+}
+// Write a program to print the month name by given number using switch
+document.write("<br>Q4. Write a program to print the month name by given number using switch<br><br>")
+let monthnum=12
+switch(monthnum)
+{
+    case 1:
+        {
+            document.write(" January.<br>")
+            break;
+        }
+        case 2:
+        {
+            document.write(" February.<br>")
+            break;
+        }
+        case 3:
+        {
+            document.write(" March.<br>")
+            break;
+        }
+        case 4:
+        {
+            document.write(" April.<br>")
+            break;
+        }
+        case 5:
+        {
+            document.write(" May.<br>")
+            break;
+        }
+        case 6:
+        {
+            document.write(" June.<br>")
+            break;
+        }
+        case 7:
+        {
+            document.write(" july.<br>")
+            break;
+        }
+        case 8:
+        {
+            document.write(" August.<br>")
+            break;
+        }
+        case 9:
+        {
+            document.write(" september.<br>")
+            break;
+        }
+        case 10:
+        {
+            document.write(" October.<br>")
+            break;
+        }
+        case 11:
+        {
+            document.write(" November.<br>")
+            break;
+        }
+        case 12:
+        {
+            document.write(" December.<br>")
+            break;
+        }
+        default:{
+                document.write("enter a valid number<br>")
+            }
+}
+// Write a program to calculate the root of a quadratic equation.
+document.write("<br>Q5. Write a program to calculate the root of a quadratic equation.<br><br>")
+// Write a program to read temperature in centigrade and display a suitable message according to the temperature state below:
+// Temp < 0 then Freezing weather
+// Temp 0-10 then Very Cold weather
+// Temp 10-20 then Cold weather
+// Temp 20-30 then Normal in Temp
+// Temp 30-40 then Its Hot
+// Temp >=40 then Its Very Hot
+document.write("<br>Q6. Write a program to read temperature in centigrade and display a suitable message according to the temperature state below:<br><br>")
+let temp = 25; 
+if (temp < 0) {
+    document.write("Freezing weather");
+} else if (temp >= 0 && temp < 10) {
+    document.write("Very Cold weather");
+} else if (temp >= 10 && temp < 20) {
+    document.write("Cold weather");
+} else if (temp >= 20 && temp < 30) {
+    document.write("Normal in Temp");
+} else if (temp >= 30 && temp < 40) {
+    document.write("It's Hot");
+} else {
+    document.write("It's Very Hot");
+}
+
+    </script>
+</body>
+</html>
