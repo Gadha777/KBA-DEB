@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=[1,2,3,4,5]
+        let b=[1,2,3,4,5]
+        let sum=[]
+        document.write("first array is ")
+        for(i=0;i<=4;i++)
+    {
+        document.write(a[i],"&nbsp")
+    }
+    document.write("<br>second array is ")
+        for(i=0;i<=4;i++)
+    {
+        document.write(b[i],"&nbsp")
+    }
+    document.write("<br>sum of the array is ")
+        for(i=0;i<a.length;i++)
+    {
+        sum[i]=a[i]+b[i]
+    //    document.write(a[i]+b[i],"&nbsp")
+    }
+    for(x in sum)
+    {
+        document.write(sum[x])
+    }
+    for(x of sum)
+    {
+        document.write("<br>",x)
+    }
+    document.write("<br>sum of the  elements in the array is ")
+        s=0
+        for(x of sum)
+    {
+       s=s+x;
+    }
+    document.write(s,"&nbsp")
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question</title>
+</head>
+<body>
+    <script>
+//Enter a list/array of films you like
+document.write("list of films i like<br><br>")
+let films=["Ullozhukku","Mandakini","Aavesham","vaazha","vellam","Thundu"];
+for(i=0;i<films.length;i++)
+{
+document.write(films[i],"<br>")
+}
+
+// a. From the list find the position of your favourite film
+
+document.write("<br><br>a. the position of your favourite film <br><br>",films.indexOf("vaazha"))
+
+
+// b. Add one more film to the list
+films.push("Premalu")
+document.write("<br><br>b. Add one more film to the list <br><br>")
+for(i=0;i<films.length;i++)
+{
+document.write(films[i],"<br>")
+}
+
+// c. Pop one film from the list
+films.pop()
+document.write("<br><br>c. Pop one film from the list is <br><br>")
+for(i=0;i<films.length;i++)
+{
+document.write(films[i],"<br>")
+}
+// d. Delete the least interested film from the list
+films.splice(1,1)
+document.write("<br><br>c. Deleted the least interested film from the list<br><br>")
+for(i=0;i<films.length;i++)
+{
+document.write(films[i],"<br>")
+}
+// c. Make a different list from 3rd position to 6th position
+newlist=films.slice(2,7)
+document.write("<br><br>c.new list<br><br>")
+for(i=0;i<newlist.length;i++)
+{
+document.write(newlist[i],"<br>")
+}
+// d. Search whether "ARM" is on your list
+document.write("<br><br>d. Searching for 'ARM' in the list... <br><br>");
+if (films.includes("ARM")) {
+    document.write("The film 'ARM' is on your list.");
+} else {
+    document.write("The film 'ARM' is NOT on your list.");
+}
+    </script>
+</body>
+</html>

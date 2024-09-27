@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a =[1,2,3,4]
+        a.push(5);
+        document.write("<br>",a)
+        a.pop()
+        document.write("<br>",a)
+        let b=a.toString();
+        document.write("<br>",b,"<br>")
+        let c=[5,6,8,9]
+        let d=a.concat(c)
+        document.write("<br> array d")
+        document.write("<br>",d,"<br>")
+        // 
+        c.splice(2,0,7)
+        document.write("<br> array c")
+        document.write("<br>",c,"<br>")
+        //to slice 
+        document.write("<br> sliced array")
+        let k= c.slice(2,5)
+        document.write("<br>",k,"<br>")
+
+        document.write("<br>reversed array d")
+        document.write( "<br>", d.reverse(),"<br>")
+
+        document.write("<br>indexof 5<br>")
+        document.write(d.indexOf(5))
+
+        document.write("<br> joining *<br>")
+        document.write(d.join("*"))
+    </script>
+</body>
+</html>

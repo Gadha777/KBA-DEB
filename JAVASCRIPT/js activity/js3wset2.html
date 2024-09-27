@@ -14,8 +14,25 @@ if(n%3==0 && n%7==0)
 document.write("<br>",n," is a multiple of 3 and 7<br><br>")
 else
 document.write(n," is a multiple of 3 and 7<br><br>")
+
+
 // Write a JavaScript conditional statement to find the sign of the product of three numbers. Display with the specified sign.
 document.write("Q2. Write a JavaScript conditional statement to find the sign of the product of three numbers. Display with the specified sign.<br>")
+let num1 = 3;
+let num2 = -7;
+let num3 = 2;
+let product = num1 * num2 * num3;
+
+// Check the sign of the product and display the result
+if (product > 0) {
+    document.write("The sign of the product is +");
+} else if (product < 0) {
+    document.write("The sign of the product is -");
+} else {
+    document.write("The product is 0, which has no sign.");
+}
+
+
 // Write a program using switch case to check the CGPA on given condition.
 // If the CGPA is 8 then print You got 8 CGPA.
 // If the CGPA is 10 then print You got 10 CGPA.
@@ -43,6 +60,8 @@ switch(o)
                 document.write("enter a valid number<br>")
             }
 }
+
+
 // Write a program to print the month name by given number using switch
 document.write("<br>Q4. Write a program to print the month name by given number using switch<br><br>")
 let monthnum=12
@@ -112,6 +131,8 @@ switch(monthnum)
                 document.write("enter a valid number<br>")
             }
 }
+
+
 // Write a program to calculate the root of a quadratic equation.
 document.write("<br>Q5. Write a program to calculate the root of a quadratic equation.<br><br>")
 // Write a program to read temperature in centigrade and display a suitable message according to the temperature state below:
@@ -136,6 +157,8 @@ if (temp < 0) {
 } else {
     document.write("It's Very Hot");
 }
+
+
 
     </script>
 </body>
