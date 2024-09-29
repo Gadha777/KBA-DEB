@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=[[]];
+        a=[[1,2,3],
+           [4,5,6],
+           [7,8,9]];
+        document.write("Matrix array<br>");
+        
+        for(i=0;i<3;i++){
+            for(j=0;j<3;j++)
+        {
+            document.write(a[i][j],"&nbsp;&nbsp;");
+        }
+        document.write("<br>");
+        }
+        // reading from user example 1
+        document.write("<br>reading from user example 1<br>");
+        a=[[],[],[]]
+        for(i=0;i<3;i++){
+            for(j=0;j<3;j++)
+        {
+            document.write(a[i][j]=1,"&nbsp;&nbsp;");
+        }
+        document.write("<br>");
+        }
+
+        // reading from user example 2
+       document.write("<br>reading from user<br>");
+        a1=[[],[],[]]
+        t=1
+        for(i=0;i<a1.length;i++){
+            for(j=0;j<=a1.length;j++)
+        {
+            document.write(a1[i][j]=t,"&nbsp;&nbsp;");
+        }
+        t++;
+        document.write("<br>");
+        }
+
+
+        // reading from user example 3
+        document.write("<br>reading from user example 3<br>");
+        b=[[],[],[]]
+        k=1
+        for(i=0;i<b.length;i++){
+            for(j=0;j<=b.length;j++)
+        {
+            document.write(b[i][j]=k*2,"&nbsp;&nbsp;");
+            k++
+        }
+        document.write("<br>");
+        }
+
+        // sum of 2 matrix array
+        document.write("<br>sum of 2 matrix array<br>");
+        c=[[],[],[]]
+        for(i=0;i<c.length;i++){
+            for(j=0;j<=c.length;j++)
+        {
+            document.write(c[i][j]=a1[i][j]+b[i][j],"&nbsp;&nbsp;");
+            
+        }
+        document.write("<br>");
+        }
+        //transpose
+        document.write("<br>transpose matrix array<br>");
+        trans=[[],[],[],[]]
+        for(i=0;i<trans.length;i++){
+
+            for(j=0;j<trans.length-1;j++)
+        {
+            document.write(trans[i][j]=c[j][i],"&nbsp;&nbsp;");
+        
+        }
+       
+        document.write("<br>");
+        }
+    </script>
+</body>
+</html>

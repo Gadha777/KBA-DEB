@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        arr1=[[1,2,3],
+              [4,5,6],
+            [7,8,9]]
+        arr2=[[1,2,3],
+              [4,5,6],
+            [7,8,9]]
+        // arr2=[[2,4,6],
+        //     [8,10,12],
+        //     [14,16,18]]
+        
+          let c=0
+            if(arr1.length !== arr2.length){
+               document.write("the array dimension are not equal") 
+            }
+            else{
+                for(i=0;i<arr1.length;i++)
+                {
+                    for(j=0;j<arr2.length;j++)
+                    {
+                        if(arr1[i][j]!==arr2[i][j])
+                        {
+                        
+                        break;
+                        }
+                        else
+                        {
+                        c++;
+                        continue;
+                        }
+                    }
+                }
+            }
+
+            if(c>0){
+                document.write("matrix are equal")
+            }
+            else{
+                document.write("matrix are not  equal")
+            }
+    </script>
+</body>
+</html>

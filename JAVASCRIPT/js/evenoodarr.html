@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        a=[1,2,3,4,5,6,7,8,9]
+        a1=[];
+        a2=[];
+        document.write("array = ")
+        for(x of a)
+    {
+        document.write(x,"&nbsp;&nbsp;")
+    }
+    for(x of a)
+    {
+        if(x%2!=0)
+        a1.push(x)
+    
+    else
+        a2.push(x)
+    }
+    document.write("<br>array of odd :" ,a1)
+    document.write("<br>array of even :" ,a2)
+    </script>
+</body>
+</html>
