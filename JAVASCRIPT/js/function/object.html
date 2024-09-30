@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //here person is object that i created 
+        //and name,age,city are the property like key value pair 
+        //and console .log is to call the function with like person.age
+        let person={name:'bob',age:20,city:'trivandrum'//function defined inside the object
+                    ,greet:function() //here greet is key function
+        {
+            console.log('hello ,'+this.name);
+        }
+        }
+        console.log(person.name)
+        console.log(person.age)
+        console.log(person.city)
+        person.greet();
+
+        
+       
+    </script>
+</body>
+</html>

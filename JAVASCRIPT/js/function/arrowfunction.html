@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arrowadd=(a,b)=>a+b;
+        console.log('Arrow function',arrowadd(20,30));
+
+        //timeout set cheyiyan 
+        let person={
+            name:'bob',age:30,greet:function()
+        {
+            setTimeout(()=>{ console.log('Hello ,'+this.name)},10000);
+        }
+    };
+    person.greet();// call cheyiyan marakaruth!
+    </script>
+</body>
+</html>

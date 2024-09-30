@@ -17,7 +17,7 @@
         //     [8,10,12],
         //     [14,16,18]]
         
-          let c=0
+          let c=true
             if(arr1.length !== arr2.length){
                document.write("the array dimension are not equal") 
             }
@@ -28,19 +28,13 @@
                     {
                         if(arr1[i][j]!==arr2[i][j])
                         {
-                        
-                        break;
-                        }
-                        else
-                        {
-                        c++;
-                        continue;
+                            c=false;
                         }
                     }
                 }
             }
 
-            if(c>0){
+            if(c){
                 document.write("matrix are equal")
             }
             else{
