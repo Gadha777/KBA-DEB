@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class=" flex bg-purple-200">
+        <img src="billa.png" alt="" class="w-16 ml-0 flex justify-start">
+            <nav class="w-full  h-18 text-pink-900 bg-purple-200  flex justify-end	mr-8 mt-4" >
+                    <a  class="mr-8" href="home.html">Home</a>
+                    <a  class="mr-8"  href="courses.html">Course</a>
+                    <a  class="mr-8"  href="contact.html">Contact Us</a>
+                    <a  class="mr-8"  href="addcourse.html">Add Course</a>
+                    <a  class="mr-8 "  href="login.html">Logout</a>
+                </div>
+            </nav>
+            
+     <br>
+     <br>
+     <p>All courses</p>
+     <br>
+     <br>
+     <div class="grid grid-cols-2">
+        <div class="bg-purple-200 m-2 p-4 text-center rounded-md shadow-lg flex flex-col item-center  mt-8 mx-10 py-10 my-10">
+            <p class="font-bold text-fuchsia-900" >Blockchain</p>
+            <img class="h-48 w-3/5 ml-24 mt-4 mb-4" src="/images.jpeg" alt="">
+            <p class="text-justify">similique consequuntur quidem enim maxime, molestias non, ipsum accusantium ullam reiciendis consequatur explicabo in laboriosam natus ex eum libero..</p>
+            <br>
+            <br>
+           <button class="bg-purple-800 decoration-pink-300 w-24 rounded-full ml-48">Learn more</button>
+           <br>
+           <div id="radio" mr-[100px]>
+            <script>
+              let kbaradio= document.getElementById("radio");
+        let radio1=document.createElement("input");
+        radio1.type="radio";
+        radio1.name="feedback";
+        kbaradio.appendChild(radio1);
+        kbaradio.appendChild(document.createTextNode("Good "));
+  
+        let radio2=document.createElement("input");
+        radio2.type="radio";
+        radio2.name="feedback";
+        kbaradio.appendChild(radio2);
+        kbaradio.appendChild(document.createTextNode("bad "));
+  
+        let radio3=document.createElement("input");
+        radio3.type="radio";
+        radio3.name="feedback";
+        kbaradio.appendChild(radio3);
+        kbaradio.appendChild(document.createTextNode("average "));
+     </script>
+           </div>
+          </div>
+         
+     </div>
+    
+</body>
+</html>
