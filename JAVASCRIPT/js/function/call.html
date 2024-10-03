@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>call method in function</h1>
+    <p>check console for output </p>
+    <script>
+        // function greet (greeting){
+        //     console.log(greeting + ','+this.name);
+        // }
+        // let person ={
+        //     name :'alice',
+        //     age :20
+        // }
+        // greet.call (person,'hello')
+
+        const person={
+            fullName:function(city,country){
+                console.log(this.firstname+" "+this.lastname +","+city+","+country );
+            }
+        }
+        const person1={
+            firstname:"john",
+            lastname:"wick"
+        };
+        const person2={
+            firstname:"alice",
+            lastname:"smith"
+        };
+        
+        const person3={
+            firstname:"jason",
+            lastname:"george"
+        };
+        const tboundFunction =person.fullName.bind(person3,"kingston","jamaica");
+        person.fullName.call(person1,"New york","USA");
+        person.fullName.apply(person2,["london","UK"]);//array ayyitt annu pass cheyithath using []
+        boundFunction();
+    </script>
+</body>
+</html>

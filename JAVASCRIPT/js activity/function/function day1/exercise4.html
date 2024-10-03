@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise 4</title>
+</head>
+<body>
+    <form  id="useerInfo" action="">
+        <label for="">username: </label>
+        <input type="text" id="username" name="" min="0">
+        <button type="button" onclick="displaymessage()">submit</button>
+    </form>
+     <!-- <p id="message1"></p> -->
+    <p id="message"></p>
+   
+    <script>
+        // Define a function userInfo that accepts a username as a parameter and logs "Welcome,
+        //  [username]". Inside this function, define and immediately invoke another function
+        //   named displayMessage that logs "User [username] has logged in". Ensure that both
+        //    functions have access to the username variable.
+
+        function displaymessage(){
+            const user=document.getElementById('username').value;
+            const messagelement= document.getElementById('message')
+            function dis(){
+               messagelement.textContent=`Welcome, ${user} `
+            }
+            function display(){
+               messagelement.textContent=`User ${user} has logged in`
+            }
+            dis(); // Display the first message
+            setTimeout(display, 2000);
+        }
+        
+
+    // If you want both messages to display one after the other,
+    // you'll need to decide how you'd like to handle the order of operations. 
+    // You could append both messages, use setTimeout to delay one, or display them differently.
+    // the second function (display()) is called inside the setTimeout function.
+
+// Here’s a breakdown:
+
+// setTimeout(display, 2000) schedules the display() function to be 
+// executed after 2 seconds (2000 milliseconds).
+// This means that after 2 seconds from the point where dis() is called and finishes executing, 
+// the display() function is invoked.
+// So, to directly answer your question: the second function display() 
+// is called after 2 seconds, because it’s scheduled by setTimeout.    
+
+    </script>
+</body>
+</html>

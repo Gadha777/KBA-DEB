@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>higher order functions</h1>
+    <p>check the console</p>
+    <script>
+        let numbers =[1,2,3,4,5];
+        let doubled =numbers.map(n=>n*2);
+        console.log(doubled)
+
+        let even =numbers.filter(n=> n%2===0);
+        console.log('even m=numbers: ',even);
+
+        let sum = numbers.reduce((total,n)=>total+n,0);
+        console.log('sum is ',sum);
+
+        // another methid to initialing array 
+        let array =new Array(5).fill(0);
+        console.log("initialized array : ",array);
+        // used to set elemnet in array using a  for loop 
+        for(let i=0; i<array.length;i++)
+            {
+                array[i]=i+1;
+            }
+            console.log('filled array : ', array );
+
+            //again maped the array
+            let arraydoubled = array.map(n=> n*2);
+            console.log('doubled array ',arraydoubled)
+    
+
+    </script>
+</body>
+</html>
