@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    ul{
+        list-style-type: none;
+        padding: 0;
+    }
+    li{
+        margin: 5px 0;
+    }
+    button{
+        margin-left: 10px;
+    }
+</style>
+<body>
+    <h1>trying out localstorage</h1>
+    <input type="text" id="taskinput" placeholder="enter your task">
+    <button onclick="addtask">Add task</button>
+    <ul id="tasklist"></ul>
+    <script>
+    function addtask(){
+        const taskinput=document.getElementById('taskinput');
+        const taskvalue= taskinput.value.trim();
+        if (taskvalue!=='')
+    {
+        saveTaskLocalStorage(taskvalue);
+        createTaskElement(taskvalue);
+        taskinput.value='';
+    }
+    }
+    //function used to save a task in local storage
+    function saveTaskLocalStorage(task)
+    {
+        let tasks=getTaskFormLocalStorage();
+        tasks.push(task);
+        localStorage.setItem('tasks',JSON.stringify(tasks));
+    }
+    //function to get all tasks from local storage
+    function getTaskFormLocalStorage(){
+        const tasks=localStorage.getItem('tasks');
+        return tasks ?JSON.parse(tasks):[];
+    }
+    //function to create a task element
+    function createTaskElement(task){
+        const tasklist=document.getElementById('tasklist');
+        const li=document.createElement('li');
+        li.textContent=task;
+        //add a remove button 
+        const removebutton=document.createElement('button');
+        removebutton.textContent='remove';
+        removebutton.onclick=function(){
+            removetask(task);
+            tasklist.removeChild(li);
+        };
+        li.appendChild(removebutton);
+        tasklist.appendChild(li);
+    }
+    function  removetask(tasktoremove){
+        let tasks=getTaskFormLocalStorage();
+        tasks =tasks.filter(task => task !==tasktoremove);
+        localStorage.setItem('tasks',JSON.stringify(tasks));
+    }
+    window.onload=function()
+    {
+        loadtasks();
+    };
+    function loadtasks()
+    {
+
+        const tasks =getTaskFormLocalStorage();
+        task.forEach(task=>{
+            createTaskElement(task);
+        });
+    }
+    </script>
+</body>
+</html>

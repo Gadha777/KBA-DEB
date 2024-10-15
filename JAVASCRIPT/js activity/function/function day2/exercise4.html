@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Create a simple task manager. Allow users to input a task and add it to a list. Each task 
+    should display a "Remove" button next to it. When clicked, the button should remove the task from
+    the list. Additionally, implement an "Edit" button for each task. Clicking the "Edit" button 
+    should replace the task text with an input field pre-filled with the current task text. After
+    editing,clicking a "Save" button should update the task.
+     -->
+    <h2>task manager</h2>
+    <label for="task" > enter a task</label>
+    <input type="text" id="task">
+    <button onclick="addtask()">add to task</button>
+    <ul id="tasklist"></ul>
+    <!-- <label for="task" > enter a task</label>
+    <input type="text" id="task">
+    <button onclick="addtask()">add to task</button> -->
+    <script>
+        function addtask()
+        {
+            //Selects the input field (with id="task") and stores it in the taskinput variable.
+            const taskinput=document.getElementById('task');
+            const tasklist=document.getElementById('tasklist');
+            if (taskinput)//Checks if the input field contains any text. If empty, nothing happens.
+        {
+            const li=document.createElement('li');//Creates a new list item (<li>) element to hold the task.
+            let taskText = taskinput.value; //Stores the current input value (task text) into the variable taskText.
+            li.textContent = taskText;//Sets the text content of the new list item (<li>) to the task text entered by the user.
+//remove button
+
+            const removebutton=document.createElement('button');
+            removebutton.textContent='remove';
+            removebutton.onclick=function(){
+                tasklist.removeChild(li);//Removes the current list item (li) from the tasklist, effectively deleting the task.
+            };
+// edit button
+            const editbutton=document.createElement('button');
+            editbutton.textContent='edit';
+            editbutton.onclick=function(){
+
+                const newTask = document.createElement("input");// Creates a new input field where the user can edit the task.
+                    newTask.type = 'text';
+                    newTask.value = taskText;//Pre-fills the input field with the current task text, allowing the user to edit it.
+    
+                    li.textContent = ''; // Clear the list item's text and insert the input field
+                    li.appendChild(newTask);//Adds the input field (for editing) into the list item.
+    
+                    // Save button
+                    const savebutton = document.createElement('button');
+                    savebutton.textContent = 'Save';
+                    savebutton.onclick = function () {
+                        taskText = newTask.value;//Updates the stored task text (taskText) with the new value from the input field.
+                        li.textContent = taskText;  //  Updates the list item to display the new task text.
+                        li.appendChild(removebutton);  // Re-append buttons after updating
+                        li.appendChild(editbutton);
+                    };
+    
+                    li.appendChild(savebutton);
+            };
+
+            li.appendChild(removebutton);
+            tasklist.appendChild(li);
+            li.appendChild(editbutton);
+            tasklist.appendChild(li); //Adds the newly created list item (with the task and buttons) to the tasklist.
+            taskinput.value='';
+        }
+        }
+    </script>
+</body>
+</html>

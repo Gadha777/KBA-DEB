@@ -1,0 +1,37 @@
+.completed
+{
+    text-decoration: line-through;
+    color: gray;
+}
+.low
+{
+    color: green;
+}
+.medium
+{
+    color: orange;
+}
+.high
+{
+    color: red;
+}
+.main
+{
+    width: 900px;
+    border: 2px solid black;
+}
+h1{
+    text-align: center;
+}
+input
+{
+    margin-left: 1  0px;
+}
+label
+{
+    margin-left: 100px;
+}
+button
+{
+    margin-left: 20px;
+}

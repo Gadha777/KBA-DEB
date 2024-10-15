@@ -6,6 +6,30 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <!-- Using the new keyword, create an object constructor Book that contains properties 
+    such as title, author, and year. Add a method getDetails that logs the book's details in the format
+    "Title: [title], Author: [author], Year: [year]". Instantiate two books and log their details 
+    using the getDetails method. -->
+    <script>
+        // Book constructor
+function Book(title, author, year) {
+    this.title = title;
+    this.author = author;
+    this.year = year;
+
+    // Method to log book details
+    this.getDetails = function() {
+        console.log(`Title: ${this.title}, Author: ${this.author}, Year: ${this.year}`);
+    };
+}
+
+// Instantiate two Book objects
+let book1 = new Book("The Psychology of Money", "Morgan Housel ",  2020 );
+let book2 = new Book("Atomic habits", "James Clear", 2018);
+
+// Log the details of the books
+book1.getDetails();
+book2.getDetails();
+    </script>
 </body>
 </html>

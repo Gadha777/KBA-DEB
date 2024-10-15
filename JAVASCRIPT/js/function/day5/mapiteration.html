@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+function basicMapOperation()
+{
+    let map= new Map();
+    map.set('name','john');
+    map.set('age',30);
+    document.getElementById('getName').innerHTML="name : "+ map.get('name');
+    document.getElementById('getAge').innerHTML='age :'+map.get('age');
+    let output='';
+    map.forEach((value,key) => {
+        output+= key + '='+ value+'<br>';
+        
+    });
+    document.getElementById('iterationOutput').innerHTML=output;
+}
+    </script>
+</head>
+<body>
+    <h1>Map Method</h1>
+    <h2>Map Operations</h2>
+    <button onclick="basicMapOperation()">Run Map Methods</button>
+    <div id="getName"></div>
+    <div id="getAge"></div>
+    <div id="iterationOutput"></div>
+</body>
+</html>

@@ -11,7 +11,9 @@
     this context.Explain why the this context behaves the way it does in an arrow function. -->
     <script>
         let name = 'ALice';
-        window.name = name; // Set window.name to 'ALice'
+        //window.name holds the value 'ALice'.
+        window.name = name; // This explicitly assigns the value of the variable name to window.name,
+                                // which is a global property that belongs to the window object.
         
         const greetLater = () => {
             setTimeout(function() {
@@ -21,24 +23,5 @@
     
         greetLater();
     </script>
-    <!-- If you specifically want to work with the global this (like window in browsers), 
-    you can use bind to bind the correct this manually: -->
-    <!-- Binding this manually: The .bind(this) ensures that the this inside the arrow function refers
-    to the global object (or window in a browser).In this case, the this.name will refer to 
-    window.name. You can manually set window.name if you want to align it with the global name
-    variable:
-     -->
-<!-- 
-     Arrow functions don't have their own this, so they rely on the lexical scope. To use this in your scenario, a regular function inside setTimeout will bind this dynamically.
-     Alternatively, you can manually bind this to the global context (like window).
-     In a browser, this in the global scope refers to window, but the global name variable is not the same as window.name. You can explicitly set window.name to achieve the desired result. -->
-
-     <!-- bind() is a method in JavaScript. It is a function that belongs to Function objects and 
-     is used to explicitly set the this context for any function.
-
-How bind() Works:
-Purpose: bind() creates a new function where the this value is explicitly set to whatever you pass 
-to bind(). This is useful when you want to control the this context in different situations,
-especially when using callbacks.
-</body> -->
+</body>
 </html>

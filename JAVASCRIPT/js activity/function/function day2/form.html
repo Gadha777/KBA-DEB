@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Registration form</h2>
+    <label for="name">enter the name</label>
+    <input type="text" id="name">
+    <br>
+    <label for="gender">gender</label>
+    <input type="radio" value="female" name="gender">female
+    <input type="radio" value="male" name="gender">male
+    <input type="radio" value="other" name="gender">other
+    <br>
+    <label for="state">State</label>
+    <select name="" id="state"> 
+        <option value="1">kerala</option>
+        <option value="2">tamil nadu</option>
+        <option value="3">karnataka</option>
+    </select>
+    <br>
+    <label for="status">Status</label>
+    <input type="checkbox" id="status" checked> married
+    <input type="checkbox" id="status">unmarried
+    <br>
+    <button onclick="submit()">Submit</button>
+    <br><br>
+    <div id="alert" class="alert"></div>
+    <ul id="details"></ul>
+
+<script>
+ function showAlert(message,isDanger=false)
+ {
+    const alertDiv=document.getElementById('alert')
+    const alertDiv.textContent=message;
+    alertDiv.style.display = 'block';
+            alertDiv.classList.toggle('alert-danger', isDanger);
+
+            // Hide the alert after 3 seconds
+            setTimeout(() => {
+                alertDiv.style.display = 'none';
+            }, 3000);
+ }
+ function submit()
+ {
+    const inputname=document.getElementById('name');
+    const 
+ }
+
+</script>
+
+</body>
+</html>

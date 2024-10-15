@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise 1</title>
+</head>
+<style>
+    button
+    {
+        margin-left: 10px;
+    }
+    ul{
+        list-style-type: none;
+    }
+    li{
+        margin: 5px 0;
+    }
+    .completed {
+        text-decoration: line-through;
+        color: gray;
+    }
+    .priority-high{
+        color: red;
+    }
+    .priority-medium {
+        color: yellow;
+    }
+    .priority-low{
+        color: green;
+    }
+    #Movie
+    {
+        margin-left: 90px;
+    }
+    #priority
+    {
+        margin-left: 60px;
+    }
+    .main{
+        border: 2px solid black;
+        width: 600px;
+    }
+    .sub
+    {
+        padding: 50px;
+    }
+    h1{
+        text-align: center;
+    }
+</style>
+<body>
+ <div class="main">
+    <div class="sub">
+        <h1>Movie Playlist Manager</h1>
+        <div id="alert"></div>
+        <label for="Movie">Enter the movie name</label>
+        <input type="text" id="Movie">
+        <br>
+        <br>
+        <label for="priority">enter the priority <br> (1-high, 2-medium,3-low)</label>
+        <input type="text" id="priority">
+        <br>
+        <br>
+        <button onclick="addplaylist()">Add to Playlist</button>
+        <ul id="movielist"></ul>
+        <script src="exercise1.js"></script>
+    </div>
+ </div>
+</body>
+</html>

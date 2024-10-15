@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <style>
+        .alert {
+            display: none;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .alert-danger {
+            background-color: #f44336; /* Red */
+        }
+    </style>
+</head>
+<body>
+    <!-- Task Manager -->
+    <h2>Task Manager</h2>
+
+   <div id="alert" class="alert"></div>   <!-- Alert Messages -->
+   <!--where the alert message will be displayed. It starts as
+       hidden and will only appear when a task is added or removed. -->
+
+    <!-- Task Input -->
+    <label for="task">Enter a task:</label>
+    <input type="text" id="task">
+<br>
+    <!-- Priority Radio Buttons -->
+    <label for="priority">Priority:</label>
+    <input type="radio" name="priority" value="High"> High
+    <input type="radio" name="priority" value="Medium" checked> Medium
+    <input type="radio" name="priority" value="Low"> Low
+    <br>
+    <!-- Category Dropdown -->
+    <label for="category">Category:</label>
+    <select id="category">
+        <option value="Work">Work</option>
+        <option value="Personal">Personal</option>
+        <option value="Other">Other</option>
+    </select>
+<br>
+    <!-- Important Checkbox -->
+    <label for="important">
+        <input type="checkbox" id="important"> Mark as important
+    </label>
+<br>
+    <!-- Add Task Button -->
+    <button onclick="addtask()">Add Task</button>
+
+    <!-- Task List -->
+    <ul id="tasklist"></ul>
+
+    <script>
+        // message: the text to be shown in the alert.
+         //It takes two parameters
+        function showAlert(message, isDanger = false)
+        
+         {
+            const alertDiv = document.getElementById('alert');
+            alertDiv.textContent = message;
+            alertDiv.style.display = 'block';
+            alertDiv.classList.toggle('alert-danger', isDanger);
+
+            // Hide the alert after 3 seconds
+            setTimeout(() => {
+                alertDiv.style.display = 'none';
+            }, 3000);
+        }
+
+        function addtask() {
+            const taskInput = document.getElementById('task'); // Gets the value entered in the text field (id="task").
+            const taskList = document.getElementById('tasklist'); // References the <ul> where tasks will be added.
+            const priority = document.querySelector('input[name="priority"]:checked').value; // Gets the value of the selected radio button (name="priority").
+            const category = document.getElementById('category').value; //Gets the selected value from the dropdown (id="category").
+            const isImportant = document.getElementById('important').checked; // Checks whether the "Important" checkbox is checked (id="important").
+
+            let taskText = taskInput.value.trim(); //  Stores the input task text after trimming any extra whitespace using .trim().
+            if (taskText) {
+                const li = document.createElement('li'); // Create new list item
+                li.textContent = taskText + ` - ${priority} Priority (${category})` + (isImportant ? " [Important]" : ""); // Add task info
+
+                // Create a "Remove" button
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove';
+                removeButton.onclick = function() {
+                    taskList.removeChild(li); // it removes the task from the list (taskList.removeChild(li)) and 
+                                                //shows an alert message (showAlert()).
+                    showAlert('Task removed successfully', true); // Show remove alert
+                };
+
+                // Create an "Edit" button
+                // Replaces the task text with an input field (editInput) to allow editing.
+                const editButton = document.createElement('button');
+                editButton.textContent = 'Edit';
+                editButton.onclick = function() {
+                    const editInput = document.createElement('input');
+                    editInput.type = 'text';
+                    editInput.value = taskText;
+
+                    li.textContent = ''; // Clear task text while editing
+                    li.appendChild(editInput); // Add the input for editing
+
+                    // Create "Save" button
+                    //Creates a "Save" button that, when clicked, updates the task with
+                    //the new text (updatedText) and re-adds the "Remove" and "Edit" buttons.
+                    const saveButton = document.createElement('button');
+                    saveButton.textContent = 'Save';
+                    saveButton.onclick = function() {
+                        const updatedText = editInput.value.trim();
+                        if (updatedText) {
+                            taskText = updatedText;
+                            li.textContent = taskText + ` - ${priority} Priority (${category})`; // Update the task text
+                            li.appendChild(removeButton); // Re-add the remove button
+                            li.appendChild(editButton); // Re-add the edit button
+                            showAlert('Task updated successfully'); // Show update alert
+                        }
+                    };
+
+                    li.appendChild(saveButton); // Add the save button
+                };
+
+                li.appendChild(removeButton); // Add remove button
+                li.appendChild(editButton); // Add edit button
+                taskList.appendChild(li); // Add task to list
+
+                showAlert('Task added successfully'); // Show add alert
+
+                taskInput.value = ''; // Clear input field after adding the task
+            }
+        }
+    </script>
+</body>
+</html>

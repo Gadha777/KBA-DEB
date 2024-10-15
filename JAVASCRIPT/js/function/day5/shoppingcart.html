@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function shoopingCartExample()
+            {
+                const shoppingCart=new Map();
+                shoppingCart.set('apple',)
+                const prices={
+                    'apple':80,
+                    'banana':50,
+                    'milk':28
+                }
+                let totalcost=0
+                shoppingCart.forEach((quantity,item) => {
+                    totalcost+=prices[item]*quantity;
+                });
+                document.getElementById('totalcost').innerHTML='total Cost : Rs. '+totalcost;
+                document.getElementById('cartsize').innerHTML='number of items :'+shoppingCart.size;
+
+            }
+        
+    </script>
+</head>
+<body>
+    <button onclick=" shoopingCartExample()"></button>
+    <div id="totalcost"></div>
+    <div id="cartsize"></div>
+</body>
+</html>

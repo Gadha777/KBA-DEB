@@ -1,0 +1,80 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise 2</title>
+</head>
+<style>
+    button
+    {
+        margin-left: 10px;
+    }
+    ul{
+        list-style-type: none;
+    }
+    li{
+        margin: 5px 0;
+    }
+    .completed {
+        text-decoration: line-through;
+        color: gray;
+    }
+    .food{
+        color: green;
+    }
+    .transport{
+        color: blue;
+    }
+    .entertainment{
+        color: purple;
+    }
+    #description
+    {
+        margin-left: 40px;
+    }
+    #amount
+    {
+        margin-left: 55px;
+    }
+    #category
+    {
+        margin-left: 10px;
+    }
+    .main{
+        border: 2px solid black;
+        width: 900px;
+    }
+    .sub
+    {
+        padding: 50px;
+    }
+    h1{
+        text-align: center;
+    }
+</style>
+<body>
+ <div class="main">
+    <div class="sub">
+        <h1>Expense Tracker Application</h1>
+        <div id="alert"></div>
+        <label for="desription">Enter the Expense desription</label>
+        <input type="text" id="description">
+        <br>
+        <br>
+        <label for="amount">Enter the Expense amount</label>
+        <input type="text" id="amount">
+        <br>
+        <br>
+        <label for="category"> expense category. <br> (Food, Transport, Entertainment)</label>
+        <input type="text" id="category">
+        <br>
+        <br>
+        <button onclick="addexpense()">Add to expense</button>
+        <ul id="expenselist"></ul>
+        <script src="exercise2.js"></script>
+    </div>
+ </div>
+</body>
+</html>
