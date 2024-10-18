@@ -11,8 +11,8 @@ app.get('/',(req,res)=>{
     res.send("Hello world");
 });
 
-
 app.post('/signup',async(req,res)=>{
+    try{
     console.log("hi");
     // console.log(req.body);full print cheyiyan
     const data=req.body; //full sadhanavum data annu variable il store cheyithu
@@ -38,9 +38,10 @@ app.post('/signup',async(req,res)=>{
             //res.status(201).send("data saved");
             res.status(201).json({Message:"data saved"})
         }
-   
-
-
+       }
+       catch(error){
+res.status(500).json(error);
+       }
 });
 
 
