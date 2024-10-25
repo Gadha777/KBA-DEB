@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Enter a element</label>
+    <input type="text" id="ele">
+    <button onclick="add()">add</button>
+    <button onclick="display()">display</button>
+    <p id="result"></p>
+    <script>
+        const arr=[];
+        function add(){
+            const elements=document.getElementById('ele').value;
+            if(elements){
+                arr.push(elements);
+            }
+            document.getElementById('ele').value=" ";
+        }
+        function display(){
+            const result=document.getElementById('result')
+            for(i=0;i<arr.length;i++){
+                result.textContent+=arr[i]+' ';
+            }
+        }
+    </script>
+</body>
+</html>

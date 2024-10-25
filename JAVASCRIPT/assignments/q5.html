@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <!-- square -->
+    <div>
+    <label for="">enter side of square</label>
+    <input type="text" id="squ">
+    <br>
+    <button onclick="square()">area of square</button>
+    <p id="sr"></p>
+    </div>
+    <!-- rectangle -->
+    <div>
+    <label for="">enter the length</label>
+    <input type="text" id="rlen">
+    <br>
+    <label for="">enter the breadth</label>
+    <input type="text" id="rbre">
+    <br>
+    <button onclick="rectangle()">area of rectangle</button>
+    <p id="rec"></p>
+    </div>
+    <!-- circle -->
+    <div>
+        <label for="">enter radius</label>
+        <input type="text" id="rad">
+        <br>
+        <button onclick="circle()">area of circle</button>
+        <p id="ra"></p>
+        </div>
+    <script>
+        function square(){
+            const len=document.getElementById('squ').value;
+            let result=len*len;
+            sr.textContent=`Area  of square is ${result}`;
+        }
+        function rectangle(){
+            const len=parseInt(document.getElementById('rlen').value);
+            const bre=parseInt(document.getElementById('rbre').value);
+            let resultrec=(len+bre)*2;
+            rec.textContent=`Area  of rectangle is ${resultrec}`;
+        }
+
+        function circle(){
+            const radius=document.getElementById('rad').value;
+            let result=2*3.14*radius;
+            ra.textContent=`Area  of circle is ${result}`;
+        }
+    </script>
+</body>
+</html>

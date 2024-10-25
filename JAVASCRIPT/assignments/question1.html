@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            height: 450px;
+            width: 330px;
+            border: 2px solid rgb(255, 255, 255);
+            background-color: black;
+            border-radius: 12px;
+        }
+        .button{
+            margin-left: 25px;
+            margin-top: 10px;
+            /* align-items: center; */
+            height:50px;
+            width: 70px;
+            background-color: rgb(255, 255, 255);
+            border: 2px solid rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            font-weight: bolder;
+            font-size: 40px;
+        }
+        #result{
+            margin-left: 10px;
+            background-color: rgb(255, 255, 255);
+            font-size: 30px;
+            font-weight: bolder;
+            color: rgb(0, 0, 0);
+            height: 50px;
+            margin: 10px;
+            width: 300px;
+        }
+
+    </style>
+</head>
+<body> 
+    <h2>CALCULATOR</h2>
+   <div id="main">
+    <div>
+        <input type="text" id="result" class="output" disabled>
+    </div>
+
+    <div id="buttons">
+        <button class="button" onclick="num('7')">7</button>
+        <button class="button" onclick="num('8')">8</button>
+        <button class="button" onclick="num('9')">9</button>
+        <br>
+        <button class="button" onclick="num('4')">4</button>
+        <button class="button" onclick="num('5')">5</button>
+        <button class="button" onclick="num('6')">6</button>
+        <br>
+        <button class="button" onclick="num('1')">1</button>
+        <button class="button" onclick="num('2')">2</button>
+        <button class="button" onclick="num('3')">3</button>
+        <br>
+        <button class="button" onclick="num('0')">0</button>
+        <button class="button" onclick="num('.')">.</button>
+        <button class="button" onclick="num('+')">+</button>
+        <br>
+        <button class="button" onclick="num('-')">-</button>
+        <button class="button" onclick="num('/')">÷</button>
+        <button class="button" onclick="num('*')">x</button>
+        <br>
+        <button class="button" onclick="deletechar()">d</button>
+        <button class="button" onclick="clearOutput()">C</button>
+        <button class="button" onclick="calculate()">=</button>
+
+    </div>
+   </div>
+
+        <script>
+            function num(value){
+                let current =document.getElementById('result').value;
+                document.getElementById('result').value =current.concat(value);
+            }
+            function calculate(){
+                let expression = document.getElementById('result').value;
+                if(expression){
+                    document.getElementById('result').value = eval(expression) 
+                }
+                        }
+            function clearOutput(){
+                document.getElementById('result').value = '';
+            }
+
+            function deletechar(){
+                let currentInput = document.getElementById('result').value;
+                document.getElementById('result').value= currentInput.slice(0 , -1)
+            }
+            // function 
+        </script>
+</body>
+</html>

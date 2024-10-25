@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt';
 
 const app=express();
 app.use(json())
-const port=8000;
+const port=8001;
 const user= new Map();
 
 
@@ -11,22 +11,22 @@ app.get('/',(req,res)=>{
     res.send("Hello world");
 });
 
+
 app.post('/signup',async(req,res)=>{
-    try{
     console.log("hi");
     // console.log(req.body);full print cheyiyan
     const data=req.body; //full sadhanavum data annu variable il store cheyithu
-    console.log(data.firstname); // data il innu firstname mathram print akki
+    //console.log(data.firstname); // data il innu firstname mathram print akki
     //const fname=data.firstname //aa firstname fname annu variable il store akki
     const{firstname,//eganeyum cheyiyum
         lastname,
         username,
         password,
         role}=data
-    console.log(lastname);
+   // console.log(lastname);
 
     const newp=await bcrypt.hash(password,10)
-    console.log(newp);
+    //console.log(newp);
 
      // Check if the user data already exists in the Map
         if (user.has(username)){
@@ -38,10 +38,9 @@ app.post('/signup',async(req,res)=>{
             //res.status(201).send("data saved");
             res.status(201).json({Message:"data saved"})
         }
-       }
-       catch(error){
-res.status(500).json(error);
-       }
+   
+
+
 });
 
 
