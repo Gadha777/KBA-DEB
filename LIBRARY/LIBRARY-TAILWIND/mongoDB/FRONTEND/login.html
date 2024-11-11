@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        async function handlesubmit(event){
+           event.preventDefault();
+           const username=document.getElementById('username').value;
+           const password=document.getElementById('password').value;
+           console.log(username);
+           // try{
+                       const response=await fetch("http://127.0.0.1:8000/login",{
+               method:"POST",
+               credentials:'include',
+               headers:{"Content-Type":"application/json"},
+               body:JSON.stringify({
+                   username:username,
+                   password:password
+               })
+           })
+       // }
+       // catch(error){
+       //     console.error('Failed to fetch:', error);
+       //     alert('An error occurred: ' + error.message);
+       // }
+           console.log(response);
+           console.log(response.status);
+           if(response.status==200){
+               window.location.href="./home.html";
+               console.log('successfully logged in');
+               alert('successfully logged in');
+              
+           }
+           else if(response.status==404){
+               console.log(' user not found');
+               alert('user not found');
+              
+           }
+           else{
+               console.log('server error');
+               alert('server error');
+               
+           }
+        }
+       </script>
+</head>
+<body class="bg-[url('./images/images.jpg')] bg-cover">
+    <nav class="flex">
+        <div class=""><img class="h-50 w-40 " src="/images/logol-removebg-preview.png" alt=""></div>
+        <!-- <div class="text-xl ml-[500px] w-full h-18 flex justify-end  mt-4">
+        <a href="home.html" class="px-4 mt-4 text-black   hover:bg-red-800 hover:text-white hover: h-8 rounded-md ">Home</a>
+        <a href="viewbook.html"class="w-36 px-4 mt-4 text-black hover:bg-red-800 hover:text-white hover: h-8 rounded-md ">View Book</a>
+        <a href="addbook.html" class="w-32 px-4 mt-4 text-black hover:bg-red-800 hover:text-white hover: h-8 rounded-md ">Add Book</a>
+        <a href="contact.html" class="px-2 mr-2 mt-4 text-black hover:bg-red-800 hover:text-white hover:h-8 rounded-md ">Contact</a>
+        <a href="login.html" class="px-4 mt-4 text-black hover:bg-red-800 hover:text-white hover: h-8 rounded-md  ">Login</a>
+        </div>   -->
+    </nav>
+    <form action="" onsubmit="handlesubmit(event)">
+        <div class="bg-red-100 w-[600px] ml-[350px] rounded-xl mt-[10px]">
+            <h1 class="font-semibold text-3xl text-center text-rose-800 py-6 ">Login</h1>
+            <div class="">
+                <label for="" class="ml-12">Username : </label>
+                <input class="ml-[20px] rounded-md" id="username" type="text" placeholder="  Enter your username" size="35">
+                <br>
+                <br>
+                <label for="" class="ml-12">Password : </label>
+                <input class="ml-6 rounded-md" id="password" type="password" placeholder="  Enter Password" size="35">
+                <br>
+                <br>
+                <input class="bg-red-800 text-white px-8 w-64 h-8 rounded-full  hover:bg-red-300 hover:text-black ml-44" type="submit" value="Login">
+                <br>
+                <br>
+                <a class="font-bold hover:bg-red-800 hover:text-white hover:px-2 rounded-md ml-44" href="" class="">Forgot Password?</a>
+                <br>
+                <p class="ml-44">Don't have an Account? <a href="signup.html" class="font-bold hover:bg-red-800 hover:text-white hover:px-2 rounded-md">Sign Up</a></p>
+                <br><br>
+            </div>
+        </div>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,120 @@
+body
+{
+    background-image: url(/backgroundimg/homebg.jpg);
+    
+    background-size:cover;
+    animation: backgroundFade 45s ease infinite;
+    /* animation-duration:55s; */
+}
+@keyframes backgroundFade {
+    0% {
+        background-image: url('/backgroundimg/homebg.jpg');
+        /* opacity: 3; */
+    }
+    50% {
+        background-image: url('/backgroundimg/slider.jpg');
+        /* opacity: 3; */
+    }
+    100% {
+        background-image: url('/backgroundimg/home.jpg');
+        /* opacity: 3; */
+    }
+}
+.heading
+{
+    text-align: center;
+    font-size: 30px;
+    color: white; 
+    font-weight: bolder;
+}
+.Heading
+{
+        margin-top: 50px;
+        /* font-family: "Gowun Batang", serif;
+        font-weight: 400;
+        font-style: normal; */
+        font-family: "Josefin Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        font-style: normal;
+
+}
+nav
+{
+    text-align: center;
+    margin-top: 70px;
+}
+a
+{
+text-decoration: none;
+color: white;
+font-family: "Gowun Batang", serif;
+font-weight: 900;
+font-style: normal;
+/* padding-left: 60px; */
+font-size: 20px;
+}
+.wel
+{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 130px;
+    color: white;
+    font-weight:900;
+    text-align: center;
+    margin-top: 60px;
+}
+p{
+    font-family: "Gowun Batang", serif;  
+    color: white;
+    font-size: larger;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 700;
+}
+#book
+{
+    background-color:transparent ;
+    border:5px solid white;
+    padding: 5px 20px;
+    margin-left: 530px;
+    margin-top: 20px;
+    color: white;
+}
+/* #nav1
+{
+    background-color: transparent;
+    border: none; 
+    width: 65px;
+    color: white;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 15px;
+} */
+nav a
+{
+    text-decoration: none;
+    color: white;
+    font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+    padding: 30px;
+    font-size: 20px;
+}
+#book:hover
+{
+    background-color: #bc8d4b;
+    border-color:#bc8d4b ;
+}
+nav a:hover
+{
+    /* background-color: #bc8d4b; */
+    /* border-color:#bc8d4b ; */
+    /* padding:10px; */
+    /* border-radius: 25px; */
+    /* background-color: transparent; */
+    border-bottom: 2px solid #bc8d4b;
+    color: #bc8d4b;
+}

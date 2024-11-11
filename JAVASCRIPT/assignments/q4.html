@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+<div>
+    <label for="">name: </label>
+    <input id="inputname" type="text" placeholder="enter name">
+    <br><br>
+    <button onclick="add()">submit</button>
+    <div >
+        <h2>enter rollnumber</h2>
+        <select id="nameoption" onchange="displayname()">
+            <option value="">Select Roll Number</option>
+        </select>
+    </div>
+    <div id="result"></div>
+
+</div>
+<script>
+     namearray=[];
+
+
+    function add(){
+        const name=document.getElementById("inputname").value;
+        const dropdown = document.getElementById('nameoption');
+        if(name){
+
+            namearray.push(name);
+            // const option= document.getElementById("nameoption")
+            const  newoption = document.createElement("option")
+            newoption.textContent= `${namearray.length }`;
+            newoption.value = namearray.length; 
+            dropdown.appendChild(newoption);
+        }
+
+        document.getElementById("inputname").value ="";
+    }
+    function displayname(){
+     
+        const  numoption =document.getElementById("nameoption")
+        const  number =parseInt(numoption.value);
+        if(number!=="")
+        {
+            result.textContent =` rollnumber: ${number} Name: ${namearray[number-1]}`;
+
+        }
+    }
+</script>
+</body>
+</html>

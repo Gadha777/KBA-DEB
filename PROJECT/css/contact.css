@@ -1,0 +1,224 @@
+#bg-video {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: 100%;
+    z-index: -1; /* Ensures the video is behind other elements */
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Ensures the video covers the entire container */
+    /* opacity: 0.8; Adjust opacity as needed */
+    pointer-events: none; /* Prevents interaction with the video */
+}
+
+#heading
+{
+    text-align: center;
+    font-size: 40px;
+    color: rgb(255, 255, 255); 
+    font-weight: bolder;
+    padding-top: 10px;
+}
+#Heading
+{
+        margin-top: 50px;
+        /* font-family: "Gowun Batang", serif;
+        font-weight: 400;
+        font-style: normal; */
+        font-family: "Josefin Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-style: normal;
+}
+nav
+{
+    text-align: center;
+    margin-top: 70px;
+}
+a
+{
+text-decoration: none;
+font-family: "Gowun Batang", serif;
+font-weight: 900;
+font-style: normal;
+font-size: 20px;
+}
+nav a
+{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+    padding: 30px;
+    font-size: 20px;
+}
+nav a:hover
+{
+    border-bottom: 6px solid #ffffff;
+    color: #ffffff;
+}
+.wel
+{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 110px;
+    color: rgb(255, 255, 255);
+    font-weight:700;
+    text-align: center;
+    margin-top: 60px;
+}
+.wel p
+{
+    color: rgb(255, 255, 255);
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    text-align: center;
+    margin-top: -20px;
+}
+h3
+{
+    color: black;
+    text-decoration:none;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    /* font-style: normal; */
+    font-size: 90px;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+p
+{
+    margin-top: -10px;
+    text-align: center;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    font-family: "Kalam", cursive;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+#Get
+{
+    color: black;
+    text-decoration:none;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    /* font-weight: 400; */
+    /* font-size: 90px; */
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+#table
+{
+    margin-top: 80px;
+}
+label
+{
+    /* margin-left: 400px; */
+    font-size: 30px;
+    font-family: "Architects Daughter", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+input
+{
+    margin-left: 40px;
+    border: none;            /* Remove all borders */
+    border-bottom: 2px solid #000; /* Add only bottom border */
+    padding: 5px; 
+}
+.i1
+{
+    margin-left: 80px;
+    width: 250px;
+}
+.i2
+{
+    margin-left: 90px;
+    width: 250px;
+}
+.i3
+{
+    margin-left: 55px;
+    width: 250px;
+}
+.i4
+{
+    margin-left: 45px;
+    width: 250px;
+    
+}
+.footer{
+    margin-top: 100px;
+    display: flex;
+}
+.footer p{
+    font-family: "Kalam", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 190px;
+
+}
+.footer h3{
+    margin-top: 100px;
+    font-family: "Kalam", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 190px;
+}
+.footer .img1
+{
+    height: 20px;
+    width: 20px;
+    margin-left: 275px;
+    margin-bottom: -80px;
+}
+.footer .img2
+{
+    height: 20px;
+    width: 20px;
+    margin-left: 245px;
+    margin-bottom: -80px;
+}
+.footer .img3
+{
+    height: 20px;
+    width: 20px;
+    margin-left: 285px;
+    margin-bottom: -80px;
+}
+#book
+{
+    background-color:transparent ;
+    border:5px solid rgb(0, 0, 0);
+    padding: 8px 25px;
+    margin-left: 150px;
+    margin-top: 20px;
+    color: rgb(0, 0, 0);
+}
+#book:hover
+{
+    background-color: #bc8d4b;
+    border-color:#bc8d4b ;
+    color: white;
+    font-weight: bolder;
+}
+#Find
+{
+    background: transparent;
+    backdrop-filter:blur(2px);
+    height: 100px;
+}

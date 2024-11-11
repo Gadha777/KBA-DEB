@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESERVATION</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[url('/dishes/1.jpg')] bg-cover bg-no-repeat bg-fixed" >
+<div>
+    <div  class="">
+        <div  class="">
+           <h1 class="font-bold text-5xl ml-[390px] mt-[60px] text-white">EPICURE RESTAURANT</h1>
+        </div>
+        <nav class="text-white mt-20 px-40 font-semibold text-xl ">
+            <a href="home.html" class="p-[30px] hover:border-b-[4px] ">HOME</a>
+            <a href="menu.html"class="p-[30px] hover:border-b-[4px]">MENU</a>
+            <a href="reservation.html" class="p-[30px] hover:border-b-[4px] ">RESERVATION</a>
+            <a href="gallery.html" class="p-[30px] hover:border-b-[4px]">GALLERY</a>
+            <a href="contact.html" class="p-[30px] hover:border-b-[4px]">CONTACT</a>
+            <a href="Aboutus.html"class="p-[30px] hover:border-b-[4px]">ABOUT US</a>
+        </nav>
+        <div class="text-white text-7xl font-bold text-center mt-16">
+            We Create<br>Delicious Memories
+        </div>
+       <button type="button"  class="bg-white text-black px-4 py-2 mt-10 ml-[550px] rounded-full font-bold hover:bg-amber-600	 hover:text-white " value="BOOK"><a href="#book">BOOK A TABLE</a></button>
+    </div>    
+   <div id="book">
+    <br>
+    <div class="mt-32 h-[100px] w-10/12 mx-24  px-8">
+        <div class="flex border-collapse border-4 border-white">
+            <div class="bg-[url('/backgroundimg/11.jpg')] bg-cover bg-no-repeat  w-[500px] h-[750px]">
+         <div class="backdrop-blur-sm outline outline-white  outline-offset-[-20px]  h-[750px]">
+            <p class="text-white text-center text-3xl py-10 font-['Satisfy']">Check Availability</p>
+            <h1 class=" text-center text-white text-6xl font-['Satisfy']">Opening Times</h1>
+            <div class="flex px-4 overflow-hidden ml-6 mr-6 pb-4 border-b-2 border-dashed  text-white text-xl mt-8 ">
+                <p class="ml-10 ">Week days</p>
+                <p class=" ml-40">09.00 - 24:00</p>
+            </div>
+            <div class="flex px-4 pb-4 border-b-2 border-dashed ml-6 mr-6 text-white text-xl mt-8 ">
+                <p class="ml-10 ">Saturday</p>
+                <p class=" ml-44">08.00 - 10:00</p>
+            </div>
+            <div class="flex px-4 pb-4 text-white text-xl ml-6 mr-6 mt-8 border-b-2 border-dashed ">
+                <p class="ml-10 ">Sunday</p>
+                <p class=" ml-48">10.00 - 24:00</p>
+            </div>
+            <p class="text-4xl text-center text-white mt-10 font-['Satisfy']">Call Us Now</p>
+            <p class="text-6xl text-center text-white mt-8 font-['Satisfy']">22000 22290</p>
+         </div>
+        </div>
+            <!-- form  -->
+            <div class="bg-white  outline outline-orange-300  outline-offset-[-20px] w-[500px] h-[750px] p-10">  
+                <div>
+                <p class="mb-[10px] text-center font-['Satisfy'] text-xl">You can book your table online easily in just a couple of minutes. We take reservations for lunch, just check the availability of your table.</p>
+                    <label class="text-xl " for="">Name</label>
+                    <br>
+                    <input type="text" class="mt-4 border-2 border-orange-400 h-8 w-full" placeholder="  enter your name" required>
+                    <br><br>
+                    <label class="text-xl " for="">Phone No</label>
+                    <br>
+                    <input type="text" class="mt-4 border-2 border-orange-400 h-8 w-full" placeholder="  enter your phone number" required>
+                    <br><br>
+                    <div class="flex">
+                       <div> 
+                        <label class="text-xl " for="">No of people</label>
+                        <br><br>
+                        <select class="border-2 border-orange-400 h-8 w-48 " name="" id="" required>
+                            <option class="bg-orange-600 text-white hover:text-white" value="">2</option>
+                            <option class="bg-orange-500 text-white hover:text-white" value="">3</option>
+                            <option class="bg-orange-600 text-white hover:text-white" value="">4</option>
+                            <option class="bg-orange-500 text-white hover:text-white" value="">5</option>
+                            <option class="bg-orange-600 text-white hover:text-white" value="">6</option>
+                        </select>
+                       </div>
+                       <div>
+                        <label class="text-xl  ml-10" for="">Date</label>
+                        <br><br>
+                        <input class="border-2 border-orange-400 h-8 w-48 ml-10" type="date" required>
+                        <br><br>
+                       </div>
+                    </div>
+                    <div class="flex">
+                        <div>
+                            <label class="text-xl" for="">Choices</label>
+                            <br><br>
+                            <input class="border-2 border-orange-400 h-8 w-48 " type="text" placeholder="  Suggestions">
+                            <br><br>
+                        </div>
+                        <div>
+                            <label class="text-xl  ml-10" for="">Time</label>
+                            <br><br>
+                            <input class="border-2 border-orange-400 h-8 w-48 ml-10" type="time" required>
+                            <br><br>
+                        </div>
+                    </div>
+                    <label class="text-xl" for="">Email</label>
+                        <br><br>
+                        <input class="border-2 border-orange-400 h-8 w-full" placeholder="  enter your email id" type="email" required>
+                </div>
+                <br>
+            
+<a href="booked.html"><button type="submit" class="ml-24 bg-orange-500 text-white px-24 py-2 hover:bg-orange-700 rounded">Book</button></a>
+            </div>
+       </div>
+        </div>
+        <p class=" mt-[700px] text-white text-center">@Epicure Restaurant</p> 
+</div>
+
+
+</div>
+<!-- <div class="flex mt-[700px] text-center text-white bg-white">
+    <div>
+      <img class="h-8 w-8" src="/gallery/location.png" alt="">
+      <h3 class="">ADDRESS</h3>
+      <p class="">Epicure Restaurant <br>40 Park Ave, Kochi,Ernakulam</p>
+    </div>
+    <div>
+      <img class="h-8 w-8" src="/gallery/reservation.png" alt="">
+      <h3 class="">RESERVATION</h3>
+      <p class="">0000 0000 00 <br>contact@Epicure.com</p>
+    </div>
+    <div>
+      <img class="h-8 w-8" src="/gallery/reserva.png" alt="">
+      <h3 class="">OPEN HOURS</h3>
+      <p class="">Monday - Friday: 10 AM - 11 PM <br>Saturday - Sunday: 9 AM - 1 PM</p>
+    </div>
+  </div> -->
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Update Course</title>
+<script>
+
+window.onload=async()=>{
+        
+        let courses=localStorage.getItem("course")
+        console.log(courses);
+        
+       const response= await fetch("http://127.0.0.1:8000/getCourse/${courses}",{
+            method:"GET",
+            credentials:"include",
+        });
+
+        console.log(response);
+
+        let data=await response.json()
+    
+        
+        console.log(data.course);
+        let items=data.course
+   
+        document.getElementById("courseName").value=courses
+        document.getElementById("courseId").value=items.courseId
+        document.getElementById("courseType").value=items.courseType
+        document.getElementById("Price").value=items.Price
+        document.getElementById("Description").value=items.courseDescription
+
+
+    }
+
+   async function updateCourse(event){
+        event.preventDefault();
+
+        let cname= document.getElementById("courseName").value
+        let cid=  document.getElementById("courseId").value
+        let ctype= document.getElementById("courseType").value
+        let cprice= document.getElementById("Price").value
+        let cdesc= document.getElementById("Description").value
+        
+        console.log(cname,cid,ctype,cprice,cdesc);
+
+     const response=  await fetch('http://127.0.0.1:8000/update',{
+            method:"PUT",
+            credentials:"include",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+            
+          courseName:cname,
+          newcourseId:cid,
+          newcourseType:ctype,
+          newPrice:cprice,
+          newcourseDescription:cdesc
+ 
+
+            })
+        })
+        console.log(response);
+        const data= await response.json();
+        console.log(data);
+
+      if(response.status==200){
+         alert("Course updated Successfully")
+         window.location.href='./viewCourse.html'
+      }else if(response.status==400){
+        alert("Course not found")
+      }
+     
+        
+        
+
+    }
+</script>
+</head>
+
+
+<body>
+    <nav class="flex justify-between p-4 bg-slate-200">
+
+        <div>
+          <img src="kbalogo.png" alt="" class="w-10" >
+        </div>
+         
+          
+          <div >
+            <a href="homepage_htmlfile.html"  class=" hover:bg-white text-blue-600 mx-3 p-2 rounded-md">Home</a>
+            <a href="Course.html"  class="hover:bg-white text-blue-600 mx-3 p-2 rounded-md">Course</a>
+            <a href="Addcourse.html"class="bg-white text-blue-600 mx-3 p-2 rounded-md">Add Course</a>
+            <a href="updateCourse.html"class="hover:bg-white text-blue-600 mx-3 p-2 rounded-md">Update Course</a>
+            <a href="contactus.html"  class="hover:bg-white text-blue-600 mx-3 p-2 rounded-md">Contact</a>
+            <a href="login.html"  class="hover:bg-white text-blue-600 mx-3 p-2 rounded-md">Log Out</a>
+          </div>
+      
+        </nav>
+
+    <div class="flex justify-center">
+        <div class=" p-12 my-5 bg-sky-400 text-white shadow-2xl text-white rounded-md">
+
+     
+        <h1 class="text-center text-3xl font-semibold">Update Course</h1>
+        <form action="" class=" text-lg " onsubmit="updateCourse(event)"> 
+            <label class="font-normal" for="">Course Name</label>
+            <div>
+                <input type="text" id="courseName" class="py-1 px-3  text-black w-96 my-2 rounded-md" required  placeholder="course name">
+            </div>
+            <label class="font-normal" for="">Course ID</label>
+            <div>
+                <input type="text" id="courseId" class="py-1 px-3 w-96 text-black  my-2 rounded-md" required  placeholder="course ID">
+            </div>
+            <label class="font-normal" for="">Course Type</label>
+            <div>
+                <select class="py-1 px-3 my-2 text-slate-500 rounded-md" id="courseType">
+                    <option value="Select">Select</option>
+                    <option value="SelfPlaced">SelfPlaced</option>
+                    <option value="Full-time">Full-time</option>
+                </select>
+            </div>
+            <label class="font-normal" for="">Price</label>
+            <div>
+                <select class="py-1 px-3 text-slate-500 rounded-md" id="Price">
+                    <option value="5000">50000</option>
+                    <option value="6000">60000</option>
+                    <option value="67000">670000</option>
+                  
+                </select>
+            </div>
+            <label class="font-normal" for="">Description</label>
+            <div>
+              <textarea class="w-96 h-44 rounded-md  text-black " name="" id="Description"></textarea>
+            </div>
+            <div class="text-center mt-3">
+                <button type="submit" class="bg-white text-black px-3 py-1 rounded-md hover:bg-sky-600 hover:text-white">update course</button>
+            </div>
+        </form>
+    
+
+
+
+</body>
+</html>

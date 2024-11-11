@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">Enter the Element :</label>
+    <input type="text" id="inputelem">
+    <button onclick="add()">add element</button>
+    <button onclick="display()"> largest element</button>
+    <div id="result"></div>
+</div>
+<script>
+    arr=[];
+
+    function add(){
+        const elem =parseInt( document.getElementById("inputelem").value);
+        if(elem){
+            arr.push(elem);
+        }
+        document.getElementById("inputelem").value="";
+            }
+
+    function display(){
+    const resultdiv =document.getElementById("result")
+        if(arr.length>0){
+            for(i=0;i<arr.length;i++){
+                resultdiv.textContent += arr[i]+ " ";
+            }
+            let l=arr[0];
+        for(i=1;i<arr.length;i++){
+            if(arr[i]>l)
+            l=arr[i];
+        }
+        largest = document.createElement("p");
+        largest.textContent= `largest of the element is ${l}`;
+        }
+       
+        result.appendChild(largest);
+    }
+  
+</script>
+</body>
+</html>

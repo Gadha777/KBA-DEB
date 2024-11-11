@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>front</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- <script>
+       function handleSearch(event) {
+            event.preventDefault(); 
+            const certificateId = document.getElementById('certificateid').value;
+
+            // Display an alert with the entered certificate ID
+            alert('Searching for Certificate ID: ' + certificateId);
+
+            // Redirect to another page, passing the certificate ID as a query parameter
+            window.location.href="/viewcertificate.html";
+        }
+</script> -->
+<script>
+     window.onload=async()=>{
+            console.log('hi');
+            try{
+            const response=await fetch("http://127.0.0.1:8000/viewuser",{
+                method:"GET",
+                credentials:'include'
+            });
+            const data= await response.json();
+            if (data.user=="admin"){
+                document.getElementById("admin").style.display='block';
+            }
+            // else{
+            //     document.getElementById("admin").style.display='none';
+            // }
+        }
+        catch(error){
+            console.log(error);
+        }
+        }
+    function handleSearch(event) {
+        event.preventDefault(); 
+        const certificateId = document.getElementById('certificateid').value;
+
+        if (certificateId) {
+            // Save the certificate ID to localStorage
+            localStorage.setItem('searchedCertificateId', certificateId);
+            
+            // Redirect to viewcertificate.html
+            window.location.href = "viewcertificate.html";
+        } else {
+            alert("Please enter a certificate ID.");
+        }
+    }
+</script>
+
+</head>
+<body  class="bg-gray-200">
+
+
+<div class="flex justify-end  p-2 ">
+    <a class="bg-sky-500 rounded w-24 h-10 p-2 pl-6 mr-4 text-justify text-slate-100"  href="frontpage.html"  >Home</a>
+    <a href="issue.html" id="admin" style="display: none;" class="rounded w-40 h-10 p-2 pl-6 text-justify ">Issue certificate</a>
+</div>
+ 
+
+    <div class="text-center text-4xl font-extrabold">
+        <p>Certificate Dapp</p>
+    </div>
+    <div class=" ">
+        <div class=" flex justify-center items-center mt-12 " >
+            <img class="w-40 h-40" src="online-course.png" alt="" >
+        </div>
+    </div>
+
+    <div class="flex justify-center items-center  mt-12 ">
+
+        <input class="border border-sky-500" type="text" id="certificateid" placeholder=" enter certificate ID to View">
+        <!-- <input class="border border-sky-500 bg-sky-500 w-24 text-slate-100 ml-4" type="button" name="" value="search"> -->
+        <button class="border border-sky-500 bg-sky-500 w-24 text-slate-100 ml-4" onclick="handleSearch(event)"  type="submit">search</button>
+    </div>
+
+
+</body>
+</html>
+

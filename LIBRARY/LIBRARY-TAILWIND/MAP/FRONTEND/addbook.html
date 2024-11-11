@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        async function handleadd(event){
+            event.preventDefault();
+            const bookname=document.getElementById('Bookname').value;
+            const authorname=document.getElementById('Authorname').value;
+            const description=document.getElementById('Description').value;
+            const price=document.getElementById('Price').value;
+            const response=await fetch("http://127.0.0.1:8000/addbooks",{
+                method:"POST",
+                credentials:"include",
+                headers:{'Content-Type':'application/json'},
+                body:JSON.stringify
+            ({
+            bookname:bookname,
+            authorname:authorname,
+            description:description,
+            price:price
+            })
+            });
+            //console.log(response);
+            console.log(response.status);
+            if(response.status==200){
+                window.location.href="./addbook.html";
+                // setting localstorage
+                // Get the existing courses from localStorage or initialize an empty array if not found
+                let BOOKS = JSON.parse(localStorage.getItem('BOOKS')) || [];
+            
+            // Create a new course object
+            const NEWBOOKS = {
+                bookname: bookname,
+                authorname: authorname,
+                description: description,
+                price: price
+            };
+            
+            // Add the new course to the array
+            BOOKS.push(NEWBOOKS);
+                
+                // Save the updated array back to localStorage
+                localStorage.setItem('BOOKS', JSON.stringify(BOOKS));
+                console.log('successfully Book  added');
+                alert('successfully Book added');
+            }
+            // else if(response.status==201){
+            // console.log('the course with these details already exists');
+            // alert('the course with these details already exists');
+            // }
+            else{
+            // console.log('server error');
+            // alert('server error');
+            }
+        }
+        async function gotoviewbook(){
+    window.location.href = './viewbook.html';
+}
+        
+    </script>
+</head>
+<body class="bg-[url('./images/images.jpg')] bg-cover">
+    <nav class="flex">
+        <div class=""><img class="h-40 w-80 " src="./images/logol-removebg-preview.png" alt=""></div>
+        <div class="text-xl ml-[500px] w-full h-18 flex justify-end  mt-4">
+        <a href="./home.html" class="px-4 mt-4 text-black   hover:bg-red-800 hover:text-white hover: h-8 rounded-md ">Home</a>
+        <a href="./viewbook.html"class="w-36 px-4 mt-4 text-black hover:bg-red-800 hover:text-white hover: h-8 rounded-md ">View Books</a>
+        <a href="./viewcart.html"class="w-36 px-4 mt-4 text-black hover:bg-red-800 hover:text-white hover: h-8 rounded-md ">View Carts</a>
+        <a href="./addbook.html" class="w-32 px-4 mt-4 text-black hover:bg-red-800 hover:text-white hover: h-8 rounded-md ">Add Book</a>
+        <a href="./login.html" class="px-4 mt-4 text-black hover:bg-red-800 hover:text-white hover: h-8 rounded-md  ">Logout</a>
+        </div>  
+    </nav>
+    <form action="" onsubmit="handleadd(event)">
+        <div class="bg-red-100 w-[500px] ml-[350px] rounded-xl">
+            <h1 class="font-semibold text-3xl text-center text-rose-800 py-6 ">Add Book</h1>
+            <div class="sub">
+                <label for="" class="ml-12">Book Name : </label> 
+                <input type="text" name="" id="Bookname" class="ml-6" placeholder="Enter the Book Name">
+                <br>
+                <br>
+                <label for="" class="ml-12">Author Name :</label>
+                <input type="text" id="Authorname" class="ml-2" placeholder="Enter the Name">
+                <br>
+                <br>
+                <label for="" class="ml-12 mt-2">Description : </label>
+                <textarea name="" class="ml-[22px]" id="Description" cols="23" ></textarea>
+                <br>
+                <br>
+                <label for="" class="ml-12">Price :</label>
+                <input type="text" class="ml-[69px]" name="" id="Price" placeholder="enter price">
+                <br>
+                <br>
+                <input class="bg-red-800 text-white px-8 w-64 h-8 rounded-full  hover:bg-red-300 hover:text-black ml-32" type="submit" value="Add Book">
+            <br><br><br>
+            </div>
+            
+                </div>
+               
+    </form>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/update.css">
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <title>Blockchain Courses</title>
+    <script>
+      window.onload=async()=>{
+        const coursename=localStorage.getItem('course');
+            const response=await fetch(`http://127.0.0.1:8000/getcourse?coursename=${coursename}`);
+            console.log(response);
+            data=await response.json();
+            if(response.status!=404){
+            console.log(data);
+            document.getElementById("cname").textContent=data.coursename;
+            // document.getElementById("type").value=data.coursetype;
+            document.getElementById("price").innerHTML=data.price;
+            document.getElementById("description").innerHTML=data.description;
+
+            }
+            else{
+                window.location.href='/notfound.html';
+            }
+      }
+      function handleEdit(){
+
+      }
+    </script>
+  </head>
+<body>
+
+       <!-- navbar  -->
+       <div class=" flex bg-purple-200">
+        <img src="billa.png" alt="" class="w-16 ml-0 flex justify-start">
+            <nav class="w-full  h-18 text-pink-900 bg-purple-200  flex justify-end	mr-8 mt-4" >
+                    <a  class="mr-8" href="home.html">Home</a>
+                    <a  class="mr-8"  href="courses.html">Course</a>
+                    <a  class="mr-8"  href="contact.html">Contact Us</a>
+                    <a  class="mr-8"  href="addcourse.html">Add Course</a>
+                    <a  class="mr-8 "  href="/login.html">Logout</a>
+                </div>
+            </nav>
+      
+  
+      <div >
+    <!-- form -->
+     <!-- Learnmore -->
+    <a href="" class="ml-[400px]">Back to course</a>
+   
+     <br>
+     <div class="ml-[400px] rounded-md [600px]  w-[500px] p-4 bg-purple-200">
+       <!-- <img src="images.jpeg" class="mt-2 ml-20 " alt=""> -->
+         <div id="image"><img src="/images/images.jpeg" alt="Course Thumbnail"class="w-full h-64 object-cover"/></div>
+<!--         
+               <div class="grid grid-cols-3 mt-4">
+                <div class="frist"> -->
+                    <!-- <h4 class="text-fuchsia-500 font-bold text-xl">s122</h4> -->
+                     <!-- <div class="text-fuchsia-700 font-bold text-3xl" id="COURSENAME"></div>
+                </div>
+                <div class="ml-20 text-red-600 font-bold"> -->
+                    <!-- for price -->
+                    <!-- <div id="PRICE"></div>    
+                </div>
+          
+                <div class="ml-4 text-white bg-violet-600 rounded text-center  w-32">
+                <button class="bg-violet-600 h-18 mr-8 " type="submit" value="Add to cart">Add to Cart</button>
+  
+                </div>
+
+               </div>
+            
+               <div class="des">
+
+        <h2 class=" text-fuchsia-500 font-bold text-xl mt-4">Description</h2> -->
+        <!-- for description -->
+        <!-- <div class="mt-2  overflow-y-scroll overflow-x-hidden h-12 justify-center" id="descriPtion"></div>
+        <h2 class=" text-fuchsia-500 font-bold text-xl mt-2">prerequisites</h2>
+        <ul class="list-disc px-4 text-sm mt-2">
+            <li>Basic understanding of blockchain technology.</li>
+            <li>Famililarity with programming languages.</li>
+            <li>Internet access.</li>
+        </ul>
+        <h2 class=" text-fuchsia-500 font-bold text-xl mt-2">Fetures</h2>
+        <ul  class="list-disc text-sm px-4 mt-2">
+            <li>40 hours of content.</li>
+            <li>certificate of completion.</li>
+            <li>Access to community forums.</li>
+            <li>Downloadable resourcses.</li>
+            <li>24/7 support.</li>
+        </ul>
+    </div>
+     </div>
+     <div class="ml-[1000px] pl-12"> 
+        <a href="upd.html"><button class=" bg-blue-700 text-white p-2  rounded-full  text-sm" type="submit" onclick="handleupdate()" vlaue="Edit Course"> Edit Course</button></a>
+        <button class="bg-red-700 text-white p-2 ml-4 rounded-full text-sm" type="submit" vlaue="Remove Course"> Remove Course</button>
+        <br><br>
+     </div> -->
+       <!-- Learnmore --> 
+
+<div class="bg-white text-gray-900 mb-10 pb-10">   
+    <div class="max-w-4xl mx-auto p-5 ">
+      
+      <section>
+     
+      </section>
+
+      <div class="bg-purple-100 shadow-lg rounded-lg overflow-hidden">
+        <img
+          src="/images/images.jpeg"
+          alt="Course Thumbnail"
+          class="w-full h-64 object-cover"
+        />
+        <div class="p-6">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+            <h1 class="text-3xl font-bold text-purple-800" id="cname" >
+            
+            </h1>
+          
+            <div class="flex items-center mt-2 sm:mt-0">
+              <span class="text-2xl text-red-500 font-semibold mr-4" id="price">
+            
+              </span>
+              <button class="bg-purple-500 text-white px-6 py-2 rounded hover:bg-purple-600">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="mb-6">
+            <h2 class="text-2xl font-semibold text-purple-800 mb-2">
+              Description
+            </h2>
+            <p id="description"></p>
+          </div>
+
+          <div class="mb-6">
+            <h2 class="text-2xl font-semibold text-purple-800 mb-2">
+              Prerequisites
+            </h2>
+            <ul class="list-disc list-inside">
+              <li>Basic understanding of blockchain technology</li>
+              <li>Familiarity with programming languages</li>
+              <li>Internet access</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-semibold text-purple-800 mb-2">
+              Features
+            </h2>
+            <ul class="list-disc list-inside">
+              <li>40 hours of content</li>
+              <li>Certificate of completion</li>
+              <li>Access to community forums</li>
+              <li>Downloadable resources</li>
+              <li>24/7 support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-row justify-end gap-4 mr-[205px] ">
+      <a  class="flex bg-blue-500 hover:bg-blue-600 text-white font-bold  rounded-full h-10 w-32 focus:outline-none focus:shadow-outline justify-center items-center" href="edit-course.html">Edit Course</a>
+      <a  class="flex bg-red-500 hover:bg-red-600 text-white font-bold  rounded-full h-10 w-32 focus:outline-none focus:shadow-outline  justify-center items-center">Remove Course</a>
+     
+      </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+
+        #dropdown {
+            margin-top: 10px;
+            display: none; /* Initially hidden */
+        }
+    </style>
+    <script>
+        function toggledropdown() {
+            const dropdown = document.getElementById("dropdown");
+            const othersRadio = document.getElementById("others");
+
+            // Show dropdown if "Others" is selected, otherwise hide it
+            dropdown.style.display = othersRadio.checked ? "block" : "none";
+        }
+        function display(){
+            const result = document.getElementById("result");
+        
+        }
+    </script>
+</head>
+<body>
+
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4"></textarea>
+        <br>
+        <label>Degree:</label>
+        <div class="radio-group">
+            <input type="radio" id="btech" name="degree" value="Btech" >
+            <label for="btech">Btech</label>
+
+            <input type="radio" id="mtech" name="degree" value="Mtech" >
+            <label for="mtech">Mtech</label>
+
+            <input type="radio" id="mca" name="degree" value="MCA" >
+            <label for="mca">MCA</label>
+
+            <input type="radio" id="others" name="degree" value="Others" onclick="toggledropdown()">
+            <label for="others">Others</label>
+            
+        </div>
+        <button onclick="display()">submit</button>
+<div id="result"></div>
+        <div id="dropdown" >
+            <label >Select a degree:</label>
+            <select >
+                <option value="BCA">BCA</option>
+                <option value="PGDCA">PGDCA</option>
+                <option value="BCom">BCom</option>
+                <option value="MPhil">MPhil</option>
+            </select>
+        </div>
+    </form>
+
+</body>
+</html>

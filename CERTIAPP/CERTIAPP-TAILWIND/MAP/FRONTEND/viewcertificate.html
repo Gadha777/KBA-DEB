@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>view</title>
+<!-- <link rel="stylesheet" href="stylecss/viewcerti.css"> -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        window.onload = () => {
+            // Retrieve the certificate ID from localStorage
+            const certificateId = localStorage.getItem('searchedCertificateId');
+            const certificates = JSON.parse(localStorage.getItem('certificates')) || [];
+    
+            if (!certificateId) {
+                alert("No certificate ID found. Please try again.");
+                window.location.href = './frontpage.html';
+                return;
+            }
+    
+            // Find the certificate with the matching ID
+            const certificate = certificates.find(cert => cert.certificateid === certificateId);
+    
+            if (certificate) {
+                // Populate the certificate details in HTML elements
+                document.getElementById("cname").textContent = certificate.candidatename;
+                document.getElementById("course").textContent = certificate.coursename;
+                document.getElementById("grade").textContent = certificate.grade;
+                document.getElementById("date").textContent = certificate.issuedate;
+            } else {
+                alert("Certificate not found.");
+                window.location.href = '/notfound.html';
+            }
+        };
+    </script>
+</head>
+<body class="bg-gray-200" >
+
+    <div class="border bg-slate-100 border-slate-400 w-9/12 ml-44  p-8 mt-14"> 
+        
+<div class="border  border-slate-400 bg-slate-100 w-9/12 ml-32  mt-10">
+
+    <div class="text-center">
+        <h2>Kerala Blockchain Academy</h2>
+    </div>
+    <div class=" flex justify-center items-center mt-12 ">
+        <img  class="w-40 h-40" src="online-course.png" alt="" > 
+    </div>
+    <div class="text-center mt-4">
+        <p>This is certify that <b id="cname"></b></p>
+    </div>
+    <div class="text-center mt-4">
+        <p> has successfully completed <b id="course"></b></p>
+    </div>
+    <div  class="text-center mt-4">
+    <p>with <b id="grade"></b> on <b id="date"></b></p>
+    </div>
+</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViewBook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        let userrole = ""; // Variable to store user role
+        
+        window.onload = async () => {
+            try {
+                // Fetch user role
+                const userResponse = await fetch("http://127.0.0.1:8000/viewuser", {
+                    method: "GET",
+                    credentials: "include"
+                });
+                const userData = await userResponse.json();
+                userrole = userData.user;
+
+                // Show 'Add Book' button if user is an admin
+                if (userrole === "admin") {
+                    document.getElementById("admin").style.display = "block";
+                }
+
+                // Fetch books to display
+                const bookResponse = await fetch("http://127.0.0.1:8000/viewBook", {
+                    method: 'GET',
+                    credentials: 'include'
+                });
+                const books = await bookResponse.json();
+                console.log("Fetched books:", books);
+
+            const container = document.getElementById("cards");
+            container.innerHTML = ''; // Clear existing content
+
+            books.forEach(bookname => {
+                const bookdiv = document.createElement("div");
+                bookdiv.style.height = '400px';
+                bookdiv.style.width = '300px';
+                bookdiv.style.marginLeft = '70px';
+                bookdiv.style.marginRight = '50px';
+                bookdiv.style.borderRadius = '5px';
+                bookdiv.style.backgroundColor = '#CCFF99';
+
+                const bookname = document.createElement("p");
+                bookname.innerHTML = book.bookname;
+                bookname.style.color = '#660000';
+                bookname.style.fontSize = '30px';
+                bookname.style.width = '300px';
+                bookname.style.textAlign = "center";
+
+                const image = document.createElement("img");
+                image.src = "./images/ram36868364514615-RAM_740x.jpg";
+                image.style.height = '180px';
+                image.style.width = '150px';
+                image.style.margin = '10px 80px 15px';
+
+                const description = document.createElement("p");
+                description.innerHTML = book.description || book.newdescription;
+                description.style.color = '#660000';
+                description.style.fontSize = '20px';
+                description.style.padding = "10px";
+                description.style.textAlign = "center";
+
+                const price = document.createElement("p");
+                price.innerHTML = book.price || book.newprice;
+                price.style.color = '#660000';
+                price.style.fontSize = '20px';
+                price.style.padding = "10px";
+                price.style.textAlign = "center";
+
+                const more = document.createElement("input");
+                more.onclick = () => handleMore(book.bookname, book.authorname, book.description, book.price);
+                more.type = 'submit';
+                more.value = 'Add to Cart';
+                more.style.backgroundColor = '#660000';
+                more.style.borderRadius = '5px';
+                more.style.padding = '5px';
+                more.style.margin = '1px 110px';
+                more.style.color = 'white';
+
+                bookdiv.appendChild(bookname);
+                bookdiv.appendChild(image);
+                bookdiv.appendChild(description);
+                bookdiv.appendChild(price);
+                bookdiv.appendChild(more);
+                container.appendChild(bookdiv);
+            });
+        // } else {
+        //     alert("No books added.");
+        // }
+            } catch (error) {
+                console.log("Error:", error);
+            }
+        };
+
+//         function handleMore(bookname, authorname, description, price) {
+//     console.log(bookname); // Log to check the book name
+//     const CARTBOOKS = JSON.parse(localStorage.getItem('CARTBOOKS')) || [];
+//     const NEWCART = {
+//         bookname: bookname,
+//         authorname: authorname,
+//         description: description,
+//         price: price
+//     };
+//     CARTBOOKS.push(NEWCART);
+//     localStorage.setItem('CARTBOOKS', JSON.stringify(CARTBOOKS));
+//     alert("Added to cart");
+//     window.location.href = './viewbook.html';
+// }
+function handleMore(bookname, authorname, description, price) {
+    console.log("Book Name:", bookname);       // Check book name
+    console.log("Author Name:", authorname);   // Check author name
+    console.log("Description:", description);  // Check description
+    console.log("Price:", price);              // Check price
+
+    const CARTBOOKS = JSON.parse(localStorage.getItem('CARTBOOKS')) || [];
+    const NEWCART = {
+        bookname: bookname,
+        authorname: authorname,
+        description: description,
+        price: price
+    };
+    CARTBOOKS.push(NEWCART);
+    localStorage.setItem('CARTBOOKS', JSON.stringify(CARTBOOKS));
+    alert("Added to cart");
+    window.location.href = './viewbook.html';
+}
+    </script>
+</head>
+<body class="bg-[url('./images/images.jpg')] bg-cover" >
+    <nav class="flex">
+        <div class=""><img class="h-40 w-80 " src="./images/logol-removebg-preview.png" alt=""></div>
+        <div class=" text-xl ml-[500px] w-full h-18 flex justify-end  mt-4">
+        <a href="./home.html" class="px-4 mt-4 text-black   hover:bg-red-800 hover:text-white hover: h-8 rounded-md ">Home</a>
+        <a href="./viewbook.html"class="w-36 px-4 mt-4 text-black hover:bg-red-800 hover:text-white hover: h-8 rounded-md ">View Books</a>
+        <a href="./viewcart.html"class="w-36 px-4 mt-4 text-black hover:bg-red-800 hover:text-white hover: h-8 rounded-md ">View Carts</a>
+        <a href="./addbook.html" id="admin" style="display: none;" class="w-32 px-4 mt-4 text-black hover:bg-red-800 hover:text-white hover: h-8 rounded-md ">Add Book</a>
+        <a href="./login.html" class="px-4 mt-4 text-black hover:bg-red-800 hover:text-white hover: h-8 rounded-md  ">Logout</a>
+        </div>  
+    </nav>
+    <p class="font-semibold text-rose-800 text-5xl text-center mt-[-80px]">Books</p>
+    <div id="cards" class="mt-10" style="display: flex;">  </div>
+   
+</body>
+</html>

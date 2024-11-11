@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Course</title>
+    <link rel="stylesheet" href="css/update.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+            window.onload=async()=>{
+          const coursename=localStorage.getItem('course');
+              const response=await fetch(`http://127.0.0.1:8000/getcourse?coursename=${coursename}`,{
+                method:"GET",
+                credentials:"include", 
+              });
+              console.log(response);
+              data=await response.json();
+              if(response.status!=404){
+              console.log(data);
+              document.getElementById("COURSENAME").value=data.coursename;
+              document.getElementById("COURSEID").value=data.courseid;
+              document.getElementById("TYPE").value=data.coursetype;
+              document.getElementById("PRICE").value=data.price;
+              document.getElementById("DESCRIPTION").value=data.description;
+              }
+            }
+            async function handleupdate(event) {
+            event.preventDefault();
+
+            const coursename = document.getElementById('COURSENAME').value;
+            const newcourseid = document.getElementById('COURSEID').value;
+            const newcoursetype = document.getElementById('TYPE').value;
+            const newdescription = document.getElementById('DESCRIPTION').value;
+            const newprice = document.getElementById('PRICE').value;
+
+            // try {
+                const response = await fetch("http://127.0.0.1:8000/updatecourse", {
+                    method: "PUT",
+                    credentials: "include",
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        coursename: coursename,
+                       newcourseid: newcourseid,
+                       newcoursetype: newcoursetype,
+                        newdescription: newdescription,
+                        newprice: newprice
+                    })
+                });
+
+            console.log(response);
+            console.log(response.status);
+            if(response.status==200){
+                window.location.href="./homepage.html";
+            }
+                // setting localstorage
+                // Get the existing courses from localStorage or initialize an empty array if not found
+                let courses = JSON.parse(localStorage.getItem('courses')) || [];
+            
+            // Create a new course object
+            const newCourse = {
+                coursename: coursename,
+                courseid: newcourseid,
+                coursetype: newcoursetype,
+                description: newdescription,
+                price: newprice
+            };
+            
+             const existingIndex = courses.findIndex(course => course.coursename === coursename);
+                if (existingIndex !== -1) {
+                    courses[existingIndex] = newCourse;
+                } else {
+                    courses.push(newCourse);
+                }
+            // Save the updated array back to localStorage
+            localStorage.setItem('courses', JSON.stringify(courses));
+            console.log('successfully course updated');
+            alert('successfully course updated');
+            }
+            // else if(response.status==201){
+            // console.log('the course with these details already exists');
+            // alert('the course with these details already exists');
+            
+            // else{
+            // console.log('server error');
+            // alert('server error');
+            // }
+            
+    
+    </script>
+</head>
+<body>
+    <div class=" flex bg-purple-200">
+    <img src="billa.png" alt="" class="w-16 ml-0 flex justify-start">
+        <nav class="w-full  h-18 text-pink-900 bg-purple-200  flex justify-end	mr-8 mt-4" >
+                <a  class="mr-8" href="homepage.html">Home</a>
+                <a  class="mr-8"  href="courses.html">Course</a>
+                <a  class="mr-8"  href="contact.html">Contact Us</a>
+                <a  class="mr-8"  href="addcourse.html">Add Course</a>
+                <a  class="mr-8 "  href="login.html">Logout</a>
+            </div>
+        </nav>
+        
+    <div class="bg-purple-200 mt-2 w-4/12 rounded p-8 mx-auto">
+        <h1 class="text-2xl font-bold text-pink-900 text-center">update Course</h1>
+       <form action="" onsubmit="handleupdate(event)">
+        <div>
+            <div class="mt-6 ml-4 ">
+              <label for="">Course Name :</label>
+              <br>
+              <input id="COURSENAME" class="w-80" type="text" placeholder="">
+            </div>
+      
+              <div class="mt-6 ml-4">
+              <label for="">Course Id :</label>
+              <br>
+              <input id="COURSEID" class="w-80" type="text" placeholder="eg:1" >
+              </div>
+              
+              <div class="mt-6 ml-4">
+                  <label for="">Course Type :</label>
+              <br>
+              <select id="TYPE"  class="w-80"name="" id="">
+                  <option value="Online">Online</option>
+                  <option value="Offline">Offline</option>
+                  <option value="self-paced">self-paced</option>
+              </select>
+              </div>
+              <div class="mt-6 ml-4">
+                  <label for="">Descirption :</label>
+              <br>
+              <textarea name="" id="DESCRIPTION" class="w-80" id=""  placeholder="Small description on the course"></textarea>
+              </div>
+  
+              <div class="mt-6 ml-4">
+                  <label for="">price</label>
+              <br>
+              <select name="" id="PRICE"  class="w-80"id="">
+                  <option value="20000">20000</option>
+                  <option value="30000">30000</option>
+                  <option value="10000">10000</option>
+                  <option value="40000">40000</option>
+              </select>
+              </div>
+             <div class="mt-6 ml-4">
+              <input  class="w-80 rounded-lg text-white bg-fuchsia-800" type="submit"  value="update Course">
+             </div>
+          </div>
+       </form>
+
+    </div>
+</body>
+</html>

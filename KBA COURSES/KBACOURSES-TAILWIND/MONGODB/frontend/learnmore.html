@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- This script runs when the webpage loads, thanks to the window.onload function, and performs the following tasks to retrieve and display a selected course's details from localStorage:
+
+Step-by-Step Explanation:
+window.onload = function() { ... }:
+
+This ensures that the script executes once the entire HTML document has finished loading. It attaches a function to run after the page is loaded, which is useful for ensuring all elements are available for manipulation.
+const selectedCourseName = localStorage.getItem('course');:
+
+The script attempts to retrieve the selected course's name from localStorage using the key 'course'.
+localStorage is a web storage API that allows storing data in the browser, and getItem('course') retrieves the value associated with the key 'course'.
+This value represents the name of the course the user selected previously.
+if (!selectedCourseName) { console.error('No course selected'); return; }:
+
+If no course name was found in localStorage (i.e., the value is null or undefined), the script logs an error message to the console (No course selected) and then stops further execution using the return statement.
+This is a safety check to avoid running the remaining code if there's no course data to display.
+const courses = JSON.parse(localStorage.getItem('courses')) || [];:
+
+The script retrieves the list of courses from localStorage using the key 'courses' and parses the JSON string to convert it into a JavaScript array.
+If no courses are found in localStorage, JSON.parse(localStorage.getItem('courses')) will be null, so the script uses an empty array ([]) as a fallback.
+const selectedCourse = courses.find(course => course.coursename === selectedCourseName);:
+
+The script searches the array of courses to find the one whose coursename matches the selectedCourseName retrieved from localStorage.
+find() is an array method that returns the first element in the array that satisfies the provided condition, which in this case checks if the coursename matches selectedCourseName.
+if (selectedCourse) { ... } else { console.error('Course not found'); }:
+
+If a matching course is found, the script proceeds to display the course details. Otherwise, it logs an error message to the console (Course not found).
+document.getElementById("PRICE").textContent = selectedCourse.price;:
+
+This sets the text content of the HTML element with the ID "PRICE" to the price value of the selected course.
+This is how the course's price is displayed on the webpage.
+document.getElementById("descriPtion").textContent = selectedCourse.description;:
+
+Similarly, this sets the text content of the HTML element with the ID "descriPtion" to the description value of the selected course.
+This displays the course's description on the webpage.
+Summary
+The script dynamically retrieves and displays the price and description of a selected course from localStorage. If the selected course or courses list isn't found, it logs an error message to the console to help with debugging. This process ensures that course details are loaded based on the user's previous selection, which was stored in localStorage. -->
+</body></html>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quos id itaque fugiat assumenda asperiores nisi. Pariatur cupiditate odit ut autem voluptatum et quod earum, dolore placeat, error mollitia. Odio!

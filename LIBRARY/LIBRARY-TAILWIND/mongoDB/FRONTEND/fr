@@ -1,0 +1,105 @@
+ <script>
+   
+        //viewcourse 
+         window.onload=async()=>{
+          
+            const response=await fetch("http://127.0.0.1:8000/viewuser",{
+                method:"GET",
+                credentials:'include'
+            });
+            const data= await response.json();
+            if (data.user!=="admin"){
+                document.getElementById("admin").style.display='block';
+            }
+            }
+          
+            const response=await fetch("http://127.0.0.1:8000/viewbook",{
+            method:'GET',
+           credentials: 'include', 
+            });
+            console.log(response.status);
+            
+             const data1=await response.json();
+             console.log(data1.length);
+             
+            if(response.status!=404){
+                console.log(data1,"data");
+                const container=document.getElementById("cards")
+                container.innerHTML='';
+                data1.forEach(book => {
+                    console.log(book);
+                    const bookdiv=document.createElement("div");
+                    // coursediv.style.border='2px solid red';
+                    bookdiv.style.height='400px'
+                    bookdiv.style.width='300px';
+                    bookdiv.style.marginLeft='70px';
+                    bookdiv.style.marginRight='50px';
+                    bookdiv.style.borderRadius='5px';
+                    bookdiv.style.backgroundColor='#CCFF99';
+
+                   const bookname=document.createElement("h1");
+                   bookname.id='name';
+                   bookname.value=book[0];
+                   bookname.innerHTML=book[0];
+                   bookname.style.color='#660000';
+                   bookname.style.fontSize='30px';
+                   bookname.style.width='300px'
+                   bookname.style.textAlign="center"
+
+
+                   const image=document.createElement("img");
+                   image.src="/images/ram36868364514615-RAM_740x.jpg";
+                   image.style.height='180px';
+                   image.style.width='150px';
+                   image.style.margin='10px 80px 15px';
+
+
+                const Description = document.createElement("p");
+                Description.innerHTML=book[1].description||book[1].newdescription;
+                Description.style.color='#660000';
+                Description.style.fontSize = '20px';
+                Description.style.padding = "10px";
+                Description.style.textAlign = "center";
+
+                const price = document.createElement("p");
+                price.innerHTML=book[1].price||book[1].newprice;
+                price.style.color='#660000';
+                price.style.fontSize = '20px';
+                price.style.padding = "10px";
+                price.style.textAlign = "center";
+               
+                   // Update this part where you create the 'more' button
+const more = document.createElement("input");
+more.onclick = () => handleMore(book[0]); // Pass the course name to the function
+more.type = 'submit';
+more.value = 'View More';
+more.id="admin";
+more.style="display: none";
+more.style.backgroundColor = '#660000';
+more.style.borderRadius = '5px';
+// more.style.marginTop="10px"
+more.style.padding = '5px';
+more.style.margin = '1px 110px';
+more.style.color='white';
+
+                   
+                   bookdiv.appendChild(bookname);
+                   bookdiv.appendChild(image);
+                   bookdiv.appendChild(Description);
+                   bookdiv.appendChild(price);
+                   bookdiv.appendChild(more);
+                   container.appendChild(bookdiv);
+            })
+        }
+        else{
+            window.location.href='/notfound.html';
+        }
+    
+
+    function handleMore(bookname) {
+    console.log(bookname);
+    localStorage.setItem('book', bookname);
+    window.location.href = '/view.html';
+}
+ 
+    </script>

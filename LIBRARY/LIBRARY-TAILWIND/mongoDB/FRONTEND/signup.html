@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+         async function handlesubmit(event){
+        event.preventDefault();
+        const name=document.getElementById('Name').value;
+        const email=document.getElementById('Email').value;
+        const username=document.getElementById('Username').value;
+        const password=document.getElementById('Password').value;
+        const role=document.getElementById('UserRole').value;
+       
+        // fecthing
+        const response= await fetch("http://127.0.0.1:8000/signup",{
+            method:"POST",
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify
+            ( {
+            name:name,
+            email:email,
+            username:username,
+            password:password,
+            role:role
+        })
+        });
+        console.log(response);
+        console.log(response.status);
+        if(response.status==200){
+            window.location.href="./login.html";
+            console.log('successfully signedup');
+            alert('successfully signedup');
+           
+        }
+        else if(response.status==404){
+            console.log('the user with these details already exists');
+            alert('the user with these details already exists');
+           
+        }
+        else{
+            console.log('server error');
+            alert('server error');
+            
+        }
+    }
+    </script>
+</head>
+<body class="bg-[url('./images/images.jpg')] bg-cover">
+
+    <nav class="flex">
+        <div class=""><img class="h-50 w-50 " src="./images/logol-removebg-preview.png" alt=""></div>
+        <h1 class="mt-14 ml-[250px] font-sans md:font-serif font-bold text-5xl">BOOKELATED</h1>
+    </nav>
+   
+        <form action="" onsubmit="handlesubmit(event)">
+          
+            <div class="bg-red-100 w-[600px] ml-[350px] rounded-xl mt-[-70px]">
+                <h1 class="font-semibold text-3xl text-center text-rose-800 py-6 ">Sign Up</h1>
+                <div class="">
+                <label for="" class="ml-12">Name :</label>
+                <input class="ml-[50px]" id="Name" type="text" placeholder="Enter your name" size="35">
+                <br>
+                <br>
+                <label for="" class="ml-12">Email : </label>
+                <input class="ml-14" id="Email" type="text" placeholder="Enter your Email id" size="35">
+                <br>
+                <br>
+                <label for="" class="ml-12">Username : </label>
+                <input class="ml-6" id="Username" type="text" placeholder="Enter your Username" size="35">
+                <br>
+                <br>
+                <label for="" class="ml-12">Password : </label>
+                <input class="ml-6" id="Password" type="password" placeholder="Enter your Password" size="35">
+                <br>
+                <br>
+                <label for="" class="ml-12"> Price : </label>
+                
+                <select class="w-[400px] ml-14" name="" id="UserRole">
+                    <option value="admin">Admin</option>
+                    <option value="user">user</option>
+                </select>
+                <br>
+                <br>
+                <input class="bg-red-800 text-white px-8 w-64 h-8 rounded-full  hover:bg-red-300 hover:text-black ml-44" type="submit" value="Sign Up">
+                <br>
+                <br>
+                <p class="ml-48">Already have an account?<a href="login.html" class="font-bold hover:bg-red-800 hover:text-white hover:px-2 rounded-md">Login</a></p>
+                <br>
+                <br>
+                </div>
+               </div>
+        </form>
+    </body>
+</body>
+</html

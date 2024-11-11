@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+             window.onload=async()=>{
+            console.log('hi');
+            try{
+            const response=await fetch("http://127.0.0.1:8000/viewuser",{
+                method:"GET",
+                credentials:'include'
+            });
+            const data= await response.json();
+            if (data.user=="admin"){
+                document.getElementById("admin").style.display='block';
+            }
+        }
+        catch(error){
+            console.log(error);
+        }
+        }
+        async function logout(event) {
+            event.preventDefault();
+            const response=await fetch("http://127.0.0.1:8000/logout",{
+                method:"post",
+                credentials:'include'
+            });
+            if(response.status==200){
+                window.location.href="./login.html";
+            }
+        }
+
+    </script>
+   
+</head>
+<body class="bg-[url('./images/images.jpg')] bg-cover">
+    <nav class="flex">
+        <div class=""><img class="h-40 w-80 " src="./images/logol-removebg-preview.png" alt=""></div>
+        <div class="font-semibold text-xl ml-[500px] w-full h-18 flex justify-end  mt-4">
+        <a href="./home.html" class="px-4 mt-4 text-black   hover:bg-red-800 hover:text-white hover: h-8 rounded-md ">Home</a>
+        <a href="./viewbook.html"   class="w-36 px-4 mt-4 text-black hover:bg-red-800 hover:text-white hover: h-8 rounded-md ">View Books</a>    
+        <a href="./viewcart.html"class="w-36 px-4 mt-4 text-black hover:bg-red-800 hover:text-white hover: h-8 rounded-md ">View Carts</a>
+        <a href="./addbook.html" id="admin" style="display: none;"  class="w-32 px-4 mt-4 text-black hover:bg-red-800 hover:text-white hover: h-8 rounded-md ">Add Book</a>
+        <a href="./login.html" onclick="logout(event)" class="px-4 mt-4 text-black hover:bg-red-800 hover:text-white hover: h-8 rounded-md  ">Logout</a>
+        </div>  
+    </nav>
+    <div class="flex">
+        <div class="">
+            <img  class="h-[400px] w-[500px] ml-28 rounded-md" src="./images/front.jpg" alt="">
+        </div>
+        <div class="font-bold text-center">
+            <p class="mt-24 text-4xl ml-24">Find Exclusive Range of Books</p>
+            <p class="mt-12 text-4xl ml-12">At Our Library</p>
+
+            <a href="./viewbook.html"><input type="submit"  value="Enquire Now" class="bg-red-800 text-white px-8 h-16 rounded-full mt-10 ml-12 hover:bg-red-300 hover:text-black"></a>
+        </div>
+        <br>
+        <br>
+
+    </div>
+</body>
+</html>

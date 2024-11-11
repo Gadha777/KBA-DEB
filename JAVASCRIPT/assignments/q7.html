@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">enter the element :</label><input id="inputelem" type="text">
+        <button onclick="add()">add element</button>
+        <br><label for="">display the entered array</label>
+        <button onclick="displayarr()"> display</button>
+        <div id="result1"></div>
+        <br><label for="">select the index</label>
+        <select name="" id="indexoption" onchange="display()">
+            <option value="">select index</option>
+        </select>
+        <div id="result2"></div>
+        <label for="">view sorted array: </label>
+        <button onclick="sortarray()">sorted array</button>
+        <div id="result3"></div>
+        <label for="">search an element: </label>
+        <input type="text" id="searchelem" >
+        <button onclick="search()">search</button>
+        <div id="result4"></div>
+        <label for=""> view reversed array: </label>
+        <button onclick="reverse()">reversed array</button>
+        <div id="result5"></div>
+    </div>
+    <script>
+
+      const elem =[];
+      function add(){
+       if(inputelem){
+        const inputelem =document.getElementById("inputelem").value;
+        elem.push(inputelem);
+        const indexoption = document.getElementById("indexoption");
+        const newoption =document.createElement("option");
+        const currentindex=elem.length-1;
+        newoption.textContent = `${currentindex}`;
+        newoption.value=currentindex;
+        indexoption.appendChild(newoption);
+
+       }
+       document.getElementById("inputelem").value="";
+      }
+    function displayarr(){
+        const result1 =document.getElementById("result1")
+        result1.textContent = ""; // Clear previous content
+
+            if(elem.length>0){
+                for(i=0;i<elem.length;i++){
+                    // const elemvalue =elem[i]
+                    result1.textContent += elem[i]  + " ";
+                }
+            }
+        }
+    function display() {
+    const selectedindex = document.getElementById("indexoption").value;
+    const result2 = document.getElementById("result2");
+
+    // Display the element at the selected index
+    if (selectedindex !== "") {
+        result2.textContent = "the element is  : " + elem[selectedindex];
+    } else {
+        result2.textContent = ""; // Clear if no valid index selected
+    }
+}
+function sortarray() {
+    const result3 = document.getElementById("result3");
+    // Sorting the array
+    elem.sort();
+
+    result3.textContent = `The sorted array is: ${elem.join(", ")}`;
+}
+function search(){
+        const result4 =document.getElementById("result4")
+        result4.textContent = ""; // Clear previous content
+        const searchelem= document.getElementById("searchelem").value
+    let found = false;
+            if(elem.length>0){
+                for(i=0;i<elem.length;i++){
+                    // const elemvalue =elem[i]
+                   if(searchelem ==elem[i])
+                   {
+                    result4.textContent = `the search element ${searchelem}  is found at index ${i}`;
+                    found = true;
+                    break;
+                   }
+                   
+                }
+                if(!found){
+                    result4.textContent = `the search element ${searchelem}  is not found`;
+                   }
+            }
+        }
+
+function reverse(){
+        const result5 =document.getElementById("result5")
+        result5.textContent = ""; // Clear previous content
+
+            if(elem.length>0){
+                for(i=elem.length;i>=0;i--){
+                    // const elemvalue =elem[i]
+                    result5.textContent += elem[i]  + " ";
+                }
+            }
+        }
+
+
+    </script>
+</body>
+</html>

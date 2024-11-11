@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        window.onload=async()=>{
+          const coursename=localStorage.getItem('course');
+              const response=await fetch(`http://127.0.0.1:8000/getcourse?coursename=${coursename}`);
+              console.log(response);
+              
+              if(response.status!=404){
+              data=await response.json();
+              console.log(data);
+              document.getElementById("COURSENAME").textContent=data.coursename;
+              document.getElementById("PRICE").innerHTML=data.price || data.newprice;
+              document.getElementById("descriPtion").innerHTML=data.description||data.newdescription;
+  
+              }
+              else{
+                  window.location.href='/notfound.html';
+              }
+        }
+        function handleEdit(){
+  
+        }   
+      </script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="flex bg-purple-200">
+        <img src="billa.png" alt="" class="w-16 ml-0 flex justify-start">
+        <nav class="w-full h-22 text-pink-900 bg-purple-200 flex justify-end mr-8 mt-4">
+            <a class="mr-8" href="./homepage.html">Home</a>
+            <a class="mr-8" href="courses.html">Courses</a>
+            <a class="mr-8" href="contact.html">Contact Us</a>
+            <a class="mr-8" href="addcourse.html">Add Course</a>
+            <a class="mr-8" href="/login.html">Logout</a>
+        </nav>
+        <br>
+    </div>
+
+    <!-- Course Details -->
+    <div>
+        <a href="courses.html" class="ml-[400px]">Back to course</a>
+        <br>
+        <div class="ml-[400px] rounded-md w-[500px] p-4 bg-purple-200">
+            <div id="image"><img src="./images/i.jpeg" alt=""></div>
+            <div class="grid grid-cols-3 mt-4">
+                <div class="text-fuchsia-700 font-bold text-3xl" id="COURSENAME"></div>
+                <div class="ml-20 text-red-600 font-bold" id="PRICE"></div>
+                <div class="ml-4 text-white bg-violet-600 rounded text-center w-32">
+                    <button class="bg-violet-600 h-10 w-full" type="submit">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Course Description -->
+            <div class="des mt-4">
+                <h2 class="text-fuchsia-500 font-bold text-xl">Description</h2>
+                <div class="mt-2 overflow-y-scroll h-12 justify-center" id="descriPtion"></div>
+                
+                <h2 class="text-fuchsia-500 font-bold text-xl mt-2">Prerequisites</h2>
+                <ul class="list-disc px-4 text-sm mt-2">
+                    <li>Basic understanding of blockchain technology.</li>
+                    <li>Familiarity with programming languages.</li>
+                    <li>Internet access.</li>
+                </ul>
+                
+                <h2 class="text-fuchsia-500 font-bold text-xl mt-2">Features</h2>
+                <ul class="list-disc text-sm px-4 mt-2">
+                    <li>40 hours of content.</li>
+                    <li>Certificate of completion.</li>
+                    <li>Access to community forums.</li>
+                    <li>Downloadable resources.</li>
+                    <li>24/7 support.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Edit and Remove Buttons -->
+        <div class="ml-[1000px] pl-12">
+            <a href="./upd.html">
+                <button class="bg-blue-700 text-white p-2 rounded-full text-sm">Edit Course</button>
+            </a>
+            <button class="bg-red-700 text-white p-2 ml-4 rounded-full text-sm" type="submit">Remove Course</button>
+            <br><br>
+        </div>
+    </div>
+</body>
+</html>

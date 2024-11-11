@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Course</title>
+    <link rel="stylesheet" href="css/update.css">
+    <script>
+        async function handleupdate(event){
+            event.preventDefault();
+            const newcoursename=document.getElementById('coursename').value;
+            // const newcourseid=document.getElementById('courseid').value;
+            const newcoursetype=document.getElementById('coursetype').value;
+            const newdescription=document.getElementById('description').value;
+            const newprice=document.getElementById('price').value;
+            console.log(coursename);
+            const response=await fetch("http://127.0.0.1:8000/updatecourse",{
+                method:"POST",
+                credentials:"include",
+                headers:{'Content-Type':'application/json'},
+                body:JSON.stringify
+            ({
+            coursename:newcoursename,
+            // courseid:newcourseid,
+            coursetype:newcoursetype,
+            description:newdescription,
+            price:price
+            })
+            });
+            console.log(response);
+            console.log(response.status);
+            if(response.status==200){
+                window.location.href="/addcourse.html";
+                // setting localstorage
+                // Get the existing courses from localStorage or initialize an empty array if not found
+                let courses = JSON.parse(localStorage.getItem('courses')) || [];
+            
+            // Create a new course object
+            const newCourse = {
+                coursename: coursename,
+                coursetype: coursetype,
+                description: description,
+                price: price
+            };
+            
+            // Add the new course to the array
+            courses.push(newCourse);
+            
+            // Save the updated array back to localStorage
+            localStorage.setItem('courses', JSON.stringify(courses));
+            console.log('successfully course added');
+            alert('successfully course added');
+            }
+            // else if(response.status==201){
+            // console.log('the course with these details already exists');
+            // alert('the course with these details already exists');
+            // }
+            else{
+            // console.log('server error');
+            // alert('server error');
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="div1"><img src="/images/billa.png" alt=""></div>
+        <div class="div2">
+        <a href="homepage.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="contact.html">Contact Us </a>
+        <a href="addcourse.html">Add Course</a>
+        <a href="login.html">Logout</a>
+        </div>
+     </nav>
+     <div class="container">
+        <h1>Update Course</h1>
+   <form action="" onsubmit=" handleupdate(event)">
+    <div class="enter">
+        <label for="">Course Name :</label>
+        <br>
+        <input class="enter2" type="text" placeholder="">
+        <br>
+        <label for="">Course Type :</label>
+        <br>
+        <select name="" id="">
+            <option value="course1">self-paced</option>
+            <option value="course2">Online </option>
+            <option value="course3">Offline</option>
+        </select>
+        <br>
+        <label for="">Descirption :</label>
+        <br>
+        <textarea name="" id="" rows="5" cols="35" placeholder="Small description on the course"></textarea>
+        <br>
+        <label for="">price</label>
+        <br>
+        <select name="" id="">
+            <option value="20000">20000</option>
+            <option value="30000">30000</option>
+            <option value="10000">10000</option>
+            <option value="40000">40000</option>
+        </select>
+        <br>
+        <input type="submit" class="button1"  value="Update Course">
+    </div>
+   </form>
+
+    </div>
+</body>
+</html>
