@@ -9,32 +9,42 @@
         let userrole = ""; // Variable to store user role
         
         window.onload = async () => {
-            try {
-                // Fetch user role
-                const userResponse = await fetch("http://127.0.0.1:8000/viewuser", {
-                    method: "GET",
-                    credentials: "include"
-                });
-                const userData = await userResponse.json();
-                userrole = userData.user;
+    try {
+        // Fetch user role
+        const userResponse = await fetch("http://127.0.0.1:8000/viewuser", {
+            method: "GET",
+            credentials: "include"
+        });
+        const userData = await userResponse.json();
+        userrole = userData.user;
 
-                // Show 'Add Book' button if user is an admin
-                if (userrole === "admin") {
-                    document.getElementById("admin").style.display = "block";
-                }
+        // Show 'Add Book' button if user is an admin
+        if (userrole === "admin") {
+            document.getElementById("admin").style.display = "block";
+        }
 
-                // Fetch books to display
-                const bookResponse = await fetch("http://127.0.0.1:8000/viewBook", {
-                    method: 'GET',
-                    credentials: 'include'
-                });
-                const books = await bookResponse.json();
-                console.log("Fetched books:", books);
+        // Fetch books to display
+        const bookResponse = await fetch("http://127.0.0.1:8000/viewbook", {
+            method: 'GET',
+            credentials: 'include'
+        });
 
+        // Check if the response is OK and in JSON format
+        if (!bookResponse.ok) {
+            console.error("Failed to fetch books:", bookResponse.status);
+            document.getElementById("cards").innerHTML = "<p>No books found.</p>";
+            return;
+        }
+
+        const books = await bookResponse.json();
+        console.log("Fetched books:", books);
+
+        // Check if `books` is an array before using `forEach`
+        if (Array.isArray(books)) {
             const container = document.getElementById("cards");
             container.innerHTML = ''; // Clear existing content
 
-            books.forEach(bookname => {
+            books.forEach(book => {
                 const bookdiv = document.createElement("div");
                 bookdiv.style.height = '400px';
                 bookdiv.style.width = '300px';
@@ -57,7 +67,7 @@
                 image.style.margin = '10px 80px 15px';
 
                 const description = document.createElement("p");
-                description.innerHTML = book.description || book.newdescription;
+                description.innerHTML = book.description ;
                 description.style.color = '#660000';
                 description.style.fontSize = '20px';
                 description.style.padding = "10px";
@@ -87,13 +97,15 @@
                 bookdiv.appendChild(more);
                 container.appendChild(bookdiv);
             });
-        // } else {
-        //     alert("No books added.");
-        // }
-            } catch (error) {
-                console.log("Error:", error);
-            }
-        };
+        } else {
+            console.error("Books response is not an array:", books);
+            //document.getElementById("cards").innerHTML = "<p>No books found.</p>";
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
+};
+
 
 //         function handleMore(bookname, authorname, description, price) {
 //     console.log(bookname); // Log to check the book name
@@ -135,7 +147,7 @@ function handleMore(bookname, authorname, description, price) {
         <div class=" text-xl ml-[500px] w-full h-18 flex justify-end  mt-4">
         <a href="./home.html" class="px-4 mt-4 text-black   hover:bg-red-800 hover:text-white hover: h-8 rounded-md ">Home</a>
         <a href="./viewbook.html"class="w-36 px-4 mt-4 text-black hover:bg-red-800 hover:text-white hover: h-8 rounded-md ">View Books</a>
-        <a href="./viewcart.html"class="w-36 px-4 mt-4 text-black hover:bg-red-800 hover:text-white hover: h-8 rounded-md ">View Carts</a>
+        <!-- <a href="./viewcart.html"class="w-36 px-4 mt-4 text-black hover:bg-red-800 hover:text-white hover: h-8 rounded-md ">View Carts</a> -->
         <a href="./addbook.html" id="admin" style="display: none;" class="w-32 px-4 mt-4 text-black hover:bg-red-800 hover:text-white hover: h-8 rounded-md ">Add Book</a>
         <a href="./login.html" class="px-4 mt-4 text-black hover:bg-red-800 hover:text-white hover: h-8 rounded-md  ">Logout</a>
         </div>  

@@ -22,8 +22,11 @@ const Bookschema=new mongoose.Schema({
     description:String,
     price:Number
 })
+
+
 const useradmin=mongoose.model('useradminDedtails',userschema);
 const bookdetails=mongoose.model('bookdetails',Bookschema);
+
 mongoose.connect('mongodb://localhost:27017/LIBRARY')
 
 adminroute.post('/signup',async(req,res)=>{
@@ -98,52 +101,23 @@ adminroute.post('/addbooks',authenticate,async(req,res)=>{
     } 
 });
 
-//view course using get method by miss
-adminroute.get('/viewCourse', async(req,res)=>{
-    try{
-        console.log(course.size);
-
-        if(course.size!=0){
-           
-            
-        res.send(Array.from(course.entries()))
-    }
-else{
-    res.status(404).json({message:'Not Found'});
-}}
-    catch{
-        res.status(404).json({message:"Internal error"})
-    }
-})
 adminroute.get('/viewbook',async(req,res)=>{
    
     const FIND=await bookdetails.find()
-    if(FIND){
+
+    if(FIND.length>0){
         console.log(FIND);
+        res.status(200).json(FIND)
     }
     else
     {
+        res.status(404).json({message:"there is no book added yet !"})
         console.log('there is no book added yet !')
     }
 })
 
-// adminroute.get('/viewbook', async(req,res)=>{
-    
-//     try{
-//        console.log(books.size);
 
-//        if(books.size!=0){
-          
-           
-//        res.send(Array.from(books.entries()))
-//    }
-// else{
-//    res.status(404).json({message:'Not Found'});
-// }}
-//    catch{
-//        res.status(404).json({message:"Internal error"})
-//    }
-// })
+
 adminroute.get('/viewuser',authenticate,(req,res)=>{
     try{
     const user=req.userrole;
