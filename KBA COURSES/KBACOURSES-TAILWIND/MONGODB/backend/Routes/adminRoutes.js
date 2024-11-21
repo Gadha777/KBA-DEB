@@ -274,7 +274,7 @@ adminroute.get('/getcourse/:name',authenticate,async(req,res)=>{
         res.send('veiw course details in console');
     }
     else{
-        res.send('course does not exist !');
+        res.send('course does not exist !');    
         console.log('course does not exist !');
     }
 })
