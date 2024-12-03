@@ -1,0 +1,187 @@
+#bg-video {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: 100%;
+    z-index: -1; /* Ensures the video is behind other elements */
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Ensures the video covers the entire container */
+    /* opacity: 0.8; Adjust opacity as needed */
+    pointer-events: none; /* Prevents interaction with the video */
+}
+
+nav
+{
+    text-align: center;
+    margin-top: 70px;
+}
+a
+{
+text-decoration: none;
+font-family: "Gowun Batang", serif;
+font-weight: 900;
+font-style: normal;
+font-size: 20px;
+}
+nav a
+{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+    padding: 30px;
+    font-size: 20px;
+}
+nav a:hover
+{
+    border-bottom: 6px solid #ffffff;
+    color: #ffffff;
+}
+.wel
+{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 110px;
+    color: rgb(255, 255, 255);
+    font-weight:700;
+    text-align: center;
+    margin-top: 60px;
+}
+
+
+
+
+
+
+.set3a
+{
+    margin-left : 100px;
+    margin-right: 50px;
+}
+
+
+.set2a p
+{
+    color: black;
+    font-family: "Caveat", cursive;
+    /* font-weight: 400; */
+    font-size: 25px;
+    text-align: center;
+    margin-top: -60px;
+}
+.set3a p
+{
+    color: black;
+    font-family: "Caveat", cursive;
+    /* font-weight: 400; */
+    font-size: 25px;
+    text-align: center;
+    margin-top: -60px;
+}
+.footer{
+    display: flex;
+}
+.footer p{
+    font-family: "Kalam", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 190px;
+
+}
+.footer h3{
+    margin-top: 100px;
+    font-family: "Kalam", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 190px;
+}
+.footer .img1
+{
+    height: 20px;
+    width: 20px;
+    margin-left: 275px;
+    margin-bottom: -80px;
+}
+.footer .img2
+{
+    height: 20px;
+    width: 20px;
+    margin-left: 245px;
+    margin-bottom: -80px;
+}
+.footer .img3
+{
+    height: 20px;
+    width: 20px;
+    margin-left: 285px;
+    margin-bottom: -80px;
+}
+h1
+{
+    color: rgb(0, 0, 0);
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 100px;
+    text-align: center;
+    margin-top: 30px;
+}
+.full
+{
+    background-image: url(/backgroundimg/aboutusbg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+    width: 100%;
+}
+.ser1
+{
+    padding-top: 80px;
+    display: flex;
+    margin-bottom: 60px;
+   
+}
+.service img
+{
+    height: 80px;
+    width: 80px;
+    margin-left: 150px;
+}
+.service h3{
+    color: rgb(255, 255, 255);
+    font-family: "Kalam", cursive;
+    font-weight: 400;
+    font-size: 40px;
+}
+/* .ser1 p{
+    color: black;
+    font-family: "Caveat", cursive;
+    font-size: 20px;
+} */
+.service
+{
+    margin-left: 150px;
+    margin-top: -20px;
+    background: transparent;
+    backdrop-filter:blur(3px);
+    border-radius: 25px;
+}
+.service p
+{
+width: 400px;
+font-family: "Kalam", cursive;
+font-weight: 100;
+text-align: center;
+font-size: 20px;
+margin-top: -20px;
+color: #ffffff;
+}

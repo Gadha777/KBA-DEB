@@ -1,0 +1,220 @@
+/* .first
+{
+    height: 650px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-image:url(/backgroundimg/about.jpg);
+    background-size: cover;
+   background-repeat: no-repeat; 
+    margin-top: -200px;
+} */
+#bg-video {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: 100%;
+    z-index: -1; /* Ensures the video is behind other elements */
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Ensures the video covers the entire container */
+    /* opacity: 0.8; Adjust opacity as needed */
+    pointer-events: none; /* Prevents interaction with the video */
+}
+
+.heading
+{
+    text-align: center;
+    font-size: 40px;
+    color: rgb(255, 255, 255); 
+    font-weight: bolder;
+    padding-top: 10px;
+}
+.Heading
+{
+        margin-top: 50px;
+        /* font-family: "Gowun Batang", serif;
+        font-weight: 400;
+        font-style: normal; */
+        font-family: "Josefin Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-style: normal;
+}
+nav
+{
+    text-align: center;
+    margin-top: 70px;
+}
+a
+{
+text-decoration: none;
+font-family: "Gowun Batang", serif;
+font-weight: 900;
+font-style: normal;
+font-size: 20px;
+}
+nav a
+{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+    padding: 30px;
+    font-size: 20px;
+}
+nav a:hover
+{
+    border-bottom: 6px solid #ffffff;
+    color: #ffffff;
+}
+.wel
+{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 130px;
+    color: rgb(255, 255, 255);
+    font-weight:800;
+    text-align: center;
+    margin-top: 60px;
+}
+#view
+{
+    margin-top: 140px;
+    text-align: center;
+}
+#view a
+{
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    color: #000000;
+}
+#set1,#set2,#set3,#set4
+{
+    margin-top: 20px;
+    display: flex;
+  
+}   
+.g1,.g2,.g3
+{
+    height: 400px;
+    width: 30%;
+    margin: 30px;
+    background-color: #000000;
+    /* background-color: transparent; */
+    outline:6px solid #ffffff;
+    /* z-index: -1; */
+}
+.g1 video 
+{
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
+.g2 video 
+{
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
+.g3 video 
+{
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
+p
+{
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50PX;
+    text-align: center;
+}
+.footer{
+    display: flex;
+}
+.footer p{
+    font-family: "Kalam", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 190px;
+
+}
+.footer h3{
+    margin-top: 100px;
+    font-family: "Kalam", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 190px;
+}
+.footer .img1
+{
+    height: 20px;
+    width: 20px;
+    margin-left: 275px;
+    margin-bottom: -80px;
+}
+.footer .img2
+{
+    height: 20px;
+    width: 20px;
+    margin-left: 245px;
+    margin-bottom: -80px;
+}
+.footer .img3
+{
+    height: 20px;
+    width: 20px;
+    margin-left: 285px;
+    margin-bottom: -80px;
+}
+.g1:hover
+{
+    outline-offset: -20px;
+}
+.g2:hover
+{
+    outline-offset: -20px;
+}
+.g3:hover
+{
+    outline-offset: -20px;
+}
+.g1 img
+{
+    height: 400px;
+    width: 100%;
+    margin: 1px;
+    background-color: #000000;
+    outline:6px solid #ffffff;
+    background-size: cover;
+}
+.g2 img
+{
+    height: 400px;
+    width: 100%;
+    margin: 1px;
+    background-color: #000000;
+    outline:6px solid #ffffff;
+    background-size: cover;
+}
+.g3 img
+{
+    height: 400px;
+    width: 100%;
+    margin: 1px;
+    background-color: #000000;
+    outline:6px solid #ffffff;
+    background-size: cover;
+}
